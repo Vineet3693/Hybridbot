@@ -145,6 +145,7 @@ def display_sources(pdf_results: List[str], web_results: List[Dict]):
 st.markdown('<div class="main-header"><h1>🤖 Hybrid AI Bot with Groq</h1><p>Powered by Groq API - Extract data from PDFs and search the web for intelligent answers</p></div>', unsafe_allow_html=True)
 
 # Sidebar for PDF upload and settings
+
 with st.sidebar:
     st.header("📚 Document Management")
     
@@ -167,7 +168,6 @@ with st.sidebar:
                 st.write(f"📄 {file.name} ({file.size} bytes)")
     
     st.markdown("---")
-    
     
    # Groq Model Settings
     st.header("🧠 AI Settings")
