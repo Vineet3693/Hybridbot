@@ -1,0 +1,16 @@
+
+streamlit
+PyPDF2
+pytesseract
+Pillow
+pdf2image
+requests
+beautifulsoup4
+sentence-transformers
+faiss-cpu
+nltk
+spacy
+python-dotenv
+groq
+transformers
+torch
