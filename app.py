@@ -9,6 +9,7 @@ from config import AVAILABLE_MODELS, GROQ_API_KEY
 from typing import List, Dict
 import time
 import json
+from voice_integration import VoiceIntegration
 
 # Page configuration
 st.set_page_config(
@@ -62,6 +63,8 @@ def initialize_session_state():
         st.session_state.chat_history = []
     if 'pdf_files_info' not in st.session_state:
         st.session_state.pdf_files_info = []
+    if 'voice_integration' not in st.session_state:
+    st.session_state.voice_integration = VoiceIntegration()
 
 initialize_session_state()
 
@@ -248,6 +251,40 @@ with col1:
     st.header("💬 Ask Questions")
     
     # Question input
+    
+with col1:
+    st.header("💬 Ask Questions")
+    
+    # Voice input section
+    voice_question = st.session_state.voice_integration.handle_voice_input()
+    
+    # Text input (with voice input integration)
+    default_text = voice_question if voice_question else ""
+    question = st.text_input(
+        "What would you like to know?",
+        value=default_text,
+        placeholder="Ask anything about your PDFs or general knowledge... or use voice input!",
+        key="question_input",
+        help="Type your question here or use voice input above"
+    )
+    
+    # Clear voice input if used
+    if voice_question and voice_question == question:
+        st.session_state.voice_input_text = ""
+    
+    # ... rest of the existing question handling code ...
+    
+    # After generating the answer, add voice output
+    if st.button("🔍 Get Answer", type="primary", use_container_width=True) and question:
+        # ... existing answer generation code ...
+        
+        # Add voice output after displaying the answer
+        if 'answer' in locals() or 'full_response' in locals():
+            response_text = answer if 'answer' in locals() else full_response
+            
+            # Handle voice output
+            st.session_state.voice_integration.handle_voice_output(response_text)
+            
     question = st.text_input(
         "What would you like to know?",
         placeholder="Ask anything about your PDFs or general knowledge...",
