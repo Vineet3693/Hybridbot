@@ -14,3 +14,7 @@ python-dotenv
 groq
 transformers
 torch
+python-docx
+reportlab
+fpdf2
+markdown
