@@ -64,7 +64,7 @@ def initialize_session_state():
     if 'pdf_files_info' not in st.session_state:
         st.session_state.pdf_files_info = []
     if 'voice_integration' not in st.session_state:
-    st.session_state.voice_integration = VoiceIntegration()
+        st.session_state.voice_integration = VoiceIntegration()
 
 initialize_session_state()
 
