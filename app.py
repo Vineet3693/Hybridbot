@@ -395,6 +395,246 @@ if st.session_state.chat_history:
             st.caption(f"🕒 {timestamp}")
     
     # Export chat history
+    
+if st.session_state.chat_history:
+    st.markdown("---")
+    st.header("📜 Chat History")
+    
+    # Export options
+    col_export1, col_export2, col_export3, col_export4 = st.columns(4)
+    
+    with col_export1:
+        if st.button("📄 Export as DOCX"):
+            try:
+                from export_utils import ChatExporter
+                exporter = ChatExporter()
+                docx_data = exporter.export_to_docx(st.session_state.chat_history)
+                
+                st.download_button(
+                    label="📥 Download DOCX",
+                    data=docx_data,
+                    file_name=f"chat_history_{int(time.time())}.docx",
+                    mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                )
+                st.success("✅ DOCX file ready for download!")
+            except Exception as e:
+                st.error(f"Error creating DOCX: {str(e)}")
+    
+    with col_export2:
+        if st.button("📕 Export as PDF"):
+            try:
+                from export_utils import ChatExporter
+                exporter = ChatExporter()
+                pdf_data = exporter.export_to_pdf_reportlab(st.session_state.chat_history)
+                
+                st.download_button(
+                    label="📥 Download PDF",
+                    data=pdf_data,
+                    file_name=f"chat_history_{int(time.time())}.pdf",
+                    mime="application/pdf"
+                )
+                st.success("✅ PDF file ready for download!")
+            except Exception as e:
+                st.error(f"Error creating PDF: {str(e)}")
+                # Fallback to simple PDF
+                try:
+                    from export_utils import ChatExporter
+                    exporter = ChatExporter()
+                    pdf_data = exporter.export_to_pdf_fpdf(st.session_state.chat_history)
+                    
+                    st.download_button(
+                        label="📥 Download Simple PDF",
+                        data=pdf_data,
+                        file_name=f"chat_history_simple_{int(time.time())}.pdf",
+                        mime="application/pdf"
+                    )
+                    st.info("📋 Using simple PDF format")
+                except Exception as e2:
+                    st.error(f"PDF export failed: {str(e2)}")
+    
+    with col_export3:
+        if st.button("📝 Export as Markdown"):
+            try:
+                from export_utils import ChatExporter
+                exporter = ChatExporter()
+                md_data = exporter.export_to_markdown(st.session_state.chat_history)
+                
+                st.download_button(
+                    label="📥 Download MD",
+                    data=md_data,
+                    file_name=f"chat_history_{int(time.time())}.md",
+                    mime="text/markdown"
+                )
+                st.success("✅ Markdown file ready for download!")
+            except Exception as e:
+                st.error(f"Error creating Markdown: {str(e)}")
+    
+    with col_export4:
+        if st.button("🗂️ Export as JSON"):
+            try:
+                chat_json = json.dumps(st.session_state.chat_history, indent=2, default=str)
+                st.download_button(
+                    label="📥 Download JSON",
+                    data=chat_json,
+                    file_name=f"chat_history_{int(time.time())}.json",
+                    mime="application/json"
+                )
+                st.success("✅ JSON file ready for download!")
+            except Exception as e:
+                st.error(f"Error creating JSON: {str(e)}")
+    
+    # Export all formats at once
+    st.markdown("---")
+    if st.button("📦 Export All Formats", type="secondary", use_container_width=True):
+        try:
+            from export_utils import ChatExporter
+            exporter = ChatExporter()
+            timestamp = int(time.time())
+            
+            with st.spinner("📦 Preparing all export formats..."):
+                # Create all formats
+                progress = st.progress(0)
+                
+                # DOCX
+                docx_data = exporter.export_to_docx(st.session_state.chat_history)
+                progress.progress(25)
+                
+                # PDF
+                try:
+                    pdf_data = exporter.export_to_pdf_reportlab(st.session_state.chat_history)
+                except:
+                    pdf_data = exporter.export_to_pdf_fpdf(st.session_state.chat_history)
+                progress.progress(50)
+                
+                # Markdown
+                md_data = exporter.export_to_markdown(st.session_state.chat_history)
+                progress.progress(75)
+                
+                # JSON
+                json_data = json.dumps(st.session_state.chat_history, indent=2, default=str)
+                progress.progress(100)
+                
+                progress.empty()
+                
+                # Show download buttons
+                col1, col2, col3, col4 = st.columns(4)
+                
+                with col1:
+                    st.download_button(
+                        "📄 DOCX",
+                        docx_data,
+                        f"chat_history_{timestamp}.docx",
+                        "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                    )
+                
+                with col2:
+                    st.download_button(
+                        "📕 PDF",
+                        pdf_data,
+                        f"chat_history_{timestamp}.pdf",
+                        "application/pdf"
+                    )
+                
+                with col3:
+                    st.download_button(
+                        "📝 MD",
+                        md_data,
+                        f"chat_history_{timestamp}.md",
+                        "text/markdown"
+                    )
+                
+                with col4:
+                    st.download_button(
+                        "🗂️ JSON",
+                        json_data,
+                        f"chat_history_{timestamp}.json",
+                        "application/json"
+                    )
+                
+                st.success("🎉 All formats ready for download!")
+                
+        except Exception as e:
+            st.error(f"Error preparing exports: {str(e)}")
+    
+    st.markdown("---")
+    
+    # Chat history display options
+    col_display1, col_display2, col_display3 = st.columns(3)
+    
+    with col_display1:
+        show_count = st.selectbox("Show conversations:", [5, 10, 20, "All"], index=0)
+    
+    with col_display2:
+        show_sources = st.checkbox("Show sources", value=False)
+    
+    with col_display3:
+        reverse_order = st.checkbox("Newest first", value=True)
+    
+    # Determine how many chats to show
+    if show_count == "All":
+        display_chats = st.session_state.chat_history
+    else:
+        display_chats = st.session_state.chat_history[-show_count:] if not reverse_order else st.session_state.chat_history[-show_count:]
+    
+    if reverse_order:
+        display_chats = list(reversed(display_chats))
+    
+    # Show conversations
+    for i, chat in enumerate(display_chats):
+        chat_index = len(st.session_state.chat_history) - i if reverse_order else i + 1
+        
+        with st.expander(f"💬 Conversation {chat_index}: {chat['question'][:50]}..." if len(chat['question']) > 50 else f"💬 Conversation {chat_index}: {chat['question']}"):
+            # Question and Answer
+            st.markdown(f"**❓ Question:** {chat['question']}")
+            st.markdown(f"**🤖 Answer:** {chat['answer']}")
+            
+            # Show sources if enabled
+            if show_sources:
+                sources = chat.get('sources', {})
+                if sources.get('pdf') or sources.get('web'):
+                    st.markdown("**📚 Sources:**")
+                    
+                    if sources.get('pdf'):
+                        st.write(f"📄 **PDF sources:** {len(sources['pdf'])} documents")
+                        for j, pdf_source in enumerate(sources['pdf'][:2], 1):  # Show first 2
+                            st.write(f"  • PDF {j}: {pdf_source[:100]}...")
+                    
+                    if sources.get('web'):
+                        st.write(f"🌐 **Web sources:** {len(sources['web'])} results")
+                        for j, web_source in enumerate(sources['web'][:2], 1):  # Show first 2
+                            st.write(f"  • {web_source['title']}: {web_source['snippet'][:100]}...")
+            
+            # Timestamp and actions
+            timestamp = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(chat['timestamp']))
+            
+            col_time, col_actions = st.columns([2, 1])
+            with col_time:
+                st.caption(f"🕒 {timestamp}")
+            
+            with col_actions:
+                # Individual export for this conversation
+                if st.button(f"📤 Export", key=f"export_{chat_index}"):
+                    try:
+                        from export_utils import ChatExporter
+                        exporter = ChatExporter()
+                        
+                        # Export single conversation
+                        single_chat = [chat]
+                        docx_data = exporter.export_to_docx(single_chat)
+                        
+                        st.download_button(
+                            label="📥 Download Conversation",
+                            data=docx_data,
+                            file_name=f"conversation_{chat_index}_{int(chat['timestamp'])}.docx",
+                            mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                            key=f"download_{chat_index}"
+                        )
+                    except Exception as e:
+                        st.error(f"Export error: {str(e)}")
+
+
+
+                           
     if st.button("💾 Export Chat History"):
         chat_json = json.dumps(st.session_state.chat_history, indent=2, default=str)
         st.download_button(
