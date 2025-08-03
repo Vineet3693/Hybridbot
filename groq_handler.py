@@ -33,6 +33,59 @@ class GroqHandler:
             st.error(f"Groq API connection failed: {str(e)}")
             return False
     
+    # ADD THESE NEW METHODS HERE ⬇️
+    def validate_model(self, model: str) -> bool:
+        """Validate if the model is available and working"""
+        try:
+            # Test with a simple query
+            response = self.client.chat.completions.create(
+                messages=[{"role": "user", "content": "Test"}],
+                model=model,
+                max_tokens=5
+            )
+            return True
+        except Exception as e:
+            # Don't show error in UI, just return False
+            return False
+    
+    def get_available_models(self) -> dict:
+        """Get list of actually working models"""
+        working_models = {}
+        
+        # Test only the Llama3 models that should be working
+        test_models = {
+            "Llama3 8B (Fast & Efficient)": "llama3-8b-8192",
+            "Llama3 70B (Most Powerful)": "llama3-70b-8192"
+        }
+        
+        progress_bar = st.progress(0)
+        st.info("🔍 Testing model availability...")
+        
+        for i, (name, model_id) in enumerate(test_models.items()):
+            progress_bar.progress((i + 1) / len(test_models))
+            
+            if self.validate_model(model_id):
+                working_models[name] = model_id
+                st.success(f"✅ {name} - Available")
+            else:
+                st.warning(f"❌ {name} - Not available")
+        
+        progress_bar.empty()
+        return working_models
+    
+    def auto_select_working_model(self) -> str:
+        """Automatically select a working model"""
+        test_models = ["llama3-8b-8192", "llama3-70b-8192"]
+        
+        for model in test_models:
+            if self.validate_model(model):
+                st.success(f"✅ Auto-selected working model: {model}")
+                return model
+        
+        st.error("❌ No working models found!")
+        return "llama3-8b-8192"  # Fallback
+    # ADD THESE NEW METHODS HERE ⬆️
+    
     def generate_answer(self, question: str, pdf_context: List[str] = None, web_context: List[Dict] = None) -> str:
         """Generate comprehensive answer using Groq API"""
         
@@ -95,8 +148,16 @@ Please provide a helpful answer to this question. Since no specific context is p
             return chat_completion.choices[0].message.content
             
         except Exception as e:
+            # If current model fails, try to auto-select working model
+            if "model" in str(e).lower() or "not found" in str(e).lower():
+                st.warning(f"Model {self.model} failed, trying to find working model...")
+                working_model = self.auto_select_working_model()
+                if working_model != self.model:
+                    self.model = working_model
+                    return self.generate_answer(question, pdf_context, web_context)
+            
             st.error(f"Groq API Error: {str(e)}")
-            return "Sorry, I encountered an error while generating the response. Please try again."
+            return "Sorry, I encountered an error while generating the response. The model might be temporarily unavailable. Please try again or switch to a different model."
     
     def summarize_text(self, text: str, max_length: int = 200) -> str:
         """Summarize long text using Groq"""
@@ -185,13 +246,27 @@ Please provide a helpful answer to this question. Since no specific context is p
             return stream
             
         except Exception as e:
+            # If current model fails, try to auto-select working model
+            if "model" in str(e).lower() or "not found" in str(e).lower():
+                st.warning(f"Model {self.model} failed, trying to find working model...")
+                working_model = self.auto_select_working_model()
+                if working_model != self.model:
+                    self.model = working_model
+                    return self.stream_response(question, pdf_context, web_context)
+            
             st.error(f"Groq API Error: {str(e)}")
             return None
     
     def update_settings(self, model: str = None, temperature: float = None, max_tokens: int = None):
         """Update Groq settings"""
         if model:
-            self.model = model
+            # Validate model before setting it
+            if self.validate_model(model):
+                self.model = model
+                st.success(f"✅ Model updated to: {model}")
+            else:
+                st.error(f"❌ Model {model} is not available. Keeping current model: {self.model}")
+        
         if temperature is not None:
             self.temperature = temperature
         if max_tokens:
