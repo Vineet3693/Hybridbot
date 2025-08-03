@@ -25,4 +25,3 @@ gtts
 speechrecognition
 pyttsx3
 pygame
-pyaudio
