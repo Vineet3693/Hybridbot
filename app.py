@@ -165,16 +165,23 @@ with st.sidebar:
     
     st.markdown("---")
     
-    # Groq Model Settings
+    
+   # Groq Model Settings
     st.header("🧠 AI Settings")
     
-    # Model selection
+    # Model selection - Only working models
     selected_model_name = st.selectbox(
         "Choose Groq Model:",
         list(AVAILABLE_MODELS.keys()),
-        help="Different models have different capabilities and speeds"
+        help="Choose between fast (8B) or powerful (70B) Llama3 models"
     )
     selected_model = AVAILABLE_MODELS[selected_model_name]
+    
+    # Show model info
+    if "8b" in selected_model.lower():
+        st.info("🚀 **Llama3 8B**: Fast responses, good for most tasks")
+    else:
+        st.info("💪 **Llama3 70B**: Most powerful, best for complex tasks")
     
     # Response settings
     temperature = st.slider(
@@ -184,7 +191,7 @@ with st.sidebar:
     )
     max_tokens = st.slider(
         "Max Response Length:", 
-        100, 2000, 1000, 100,
+        100, 4000, 1000, 100,  # Increased max for Llama3
         help="Maximum number of tokens in the response"
     )
     
@@ -631,18 +638,6 @@ if st.session_state.chat_history:
                         )
                     except Exception as e:
                         st.error(f"Export error: {str(e)}")
-
-
-
-                           
-    if st.button("💾 Export Chat History"):
-        chat_json = json.dumps(st.session_state.chat_history, indent=2, default=str)
-        st.download_button(
-            label="📥 Download JSON",
-            data=chat_json,
-            file_name=f"chat_history_{int(time.time())}.json",
-            mime="application/json"
-        )
 
 # Footer
 st.markdown("---")
