@@ -1,4 +1,5 @@
 
+# Core packages
 streamlit
 PyPDF2
 pytesseract
@@ -18,6 +19,8 @@ python-docx
 reportlab
 fpdf2
 markdown
+
+# Voice Chat Dependencies
 gtts
 speechrecognition
 pyttsx3
@@ -25,4 +28,5 @@ pygame
 pyaudio
 
 pip install -r requirements.txt
+
 pip install --upgrade pip
