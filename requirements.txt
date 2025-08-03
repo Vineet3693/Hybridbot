@@ -18,3 +18,9 @@ python-docx
 reportlab
 fpdf2
 markdown
+# Voice Chat Dependencies
+speechrecognition
+pyttsx3
+gtts
+pygame
+pyaudio
