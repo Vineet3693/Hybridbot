@@ -1746,7 +1746,7 @@ with col1:
     # Enhanced Question Input Section
     st.markdown('''
     <div class="question-container">
-        <h2 class="glow-text">💬 Ask Your Questions</h2>
+        <h2 class="glow-text">Ask Your Questions</h2>
         <p style="color: white; opacity: 0.9;">Get intelligent answers from your documents and the web</p>
     </div>
     ''', unsafe_allow_html=True)
