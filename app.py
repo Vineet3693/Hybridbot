@@ -2111,38 +2111,24 @@ col1, col2 = st.columns([3, 1])
 
 with col1:
     # Animated Hero Section
-    st.markdown('''
-    <div class="question-container" style="position: relative; overflow: hidden;">
-        <div style="text-align: center; position: relative; z-index: 2;">
-            <h1 class="glow-text" style="font-size: 2.5em; margin-bottom: 0.5rem;"> Ask Anything</h1>
-            <p style="color: white; font-size: 1.2em; opacity: 0.9; margin-bottom: 1rem;">
-                 Get intelligent answers from your documents and the web
-            </p>
-            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-                <span class="floating-badge"> PDF Analysis</span>
-                <span class="floating-badge"> Web Search</span>
-                <span class="floating-badge"> AI Powered</span>
-            </div>
-        </div>
-    </div>
     
-    <style>
-        .floating-badge {
-            background: linear-gradient(45deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.3);
-            animation: floatBadge 3s ease-in-out infinite alternate;
-            backdrop-filter: blur(10px);
-        }
-        
-        @keyframes floatBadge {
-            0% { transform: translateY(0px); }
-            100% { transform: translateY(-5px); }
-        }
-    </style>
-    ''', unsafe_allow_html=True)
+st.markdown('''
+<style>
+.floating-badge {
+    background: linear-gradient(45deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.3);
+    animation: floatBadge 3s ease-in-out infinite alternate;
+    backdrop-filter: blur(10px);
+}
+@keyframes floatBadge {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-5px); }
+}
+</style>
+''', unsafe_allow_html=True)
     
     # Voice Input Section with Enhanced UI
     if VOICE_AVAILABLE and hasattr(st.session_state, 'voice_integration'):
