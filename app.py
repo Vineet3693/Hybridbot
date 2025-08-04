@@ -1420,7 +1420,7 @@ with col1:
     st.markdown('''
     <div class="question-container">
         <div style="text-align: center; margin-bottom: 1rem;">
-            <h2 class="glow-text">💬 Ask Your Questions</h2>
+           <h2 class="glow-text">Ask Your Questions</h2>
             <p style="color: white; opacity: 0.9;">Get intelligent answers from your documents and the web</p>
         </div>
     </div>
