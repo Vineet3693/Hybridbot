@@ -1434,8 +1434,7 @@ with col1:
             voice_question = st.session_state.voice_integration.handle_voice_input()
             if voice_question:
                 st.markdown(f'''
-                <div class="voice-detected">
-                    🎤 <strong>Voice Input Detected:</strong> {voice_question}
+                <div class="voice-detected"><strong>Voice Input Detected:</strong> {voice_question}
                 </div>
                 ''', unsafe_allow_html=True)
         except Exception as e:
