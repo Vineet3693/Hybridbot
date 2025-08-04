@@ -1604,7 +1604,7 @@ with col1:
         st.markdown(f'''
         <div class="user-message">
             <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <span style="font-size: 1.2em;">❓</span>
+                <span style="font-size: 1.2em;"></span>
                 <strong>Your Question:</strong>
             </div>
             <div style="font-size: 1.1em; line-height: 1.5;">{question}</div>
