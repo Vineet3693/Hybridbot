@@ -2028,7 +2028,7 @@ with col1:
                                         response_placeholder.markdown(
                                             f'''
                                             <div class="streaming-text" style="color: white; line-height: 1.6;">
-                                                {full_response}<span style="animation: blink 1s infinite;">▌</span>
+                                                {full_response}<span style="animation: blink 1s infinite;"></span>
                                             </div>
                                             <style>
                                                 @keyframes blink {{
@@ -2114,7 +2114,7 @@ with col1:
     st.markdown('''
     <div class="question-container" style="position: relative; overflow: hidden;">
         <div style="text-align: center; position: relative; z-index: 2;">
-            <h1 class="glow-text" style="font-size: 2.5em; margin-bottom: 0.5rem;">💬 Ask Anything</h1>
+            <h1 class="glow-text" style="font-size: 2.5em; margin-bottom: 0.5rem;"> Ask Anything</h1>
             <p style="color: white; font-size: 1.2em; opacity: 0.9; margin-bottom: 1rem;">
                  Get intelligent answers from your documents and the web
             </p>
@@ -2152,7 +2152,7 @@ with col1:
              border-radius: 15px; position: relative; overflow: hidden;">
             <div style="position: relative; z-index: 2;">
                 <h3 style="color: white; text-align: center; margin-bottom: 1rem;">
-                    🎤 Voice Input Available
+                     Voice Input Available
                 </h3>
             </div>
         </div>
@@ -2195,7 +2195,7 @@ with col1:
         placeholder=" Ask me anything! Examples:\n\n• What are the main findings in my uploaded documents?\n• How does artificial intelligence work?\n• Compare renewable energy sources\n• Summarize the key points from my PDFs\n• What's the latest news about climate change?",
         height=150,
         key="question_input",
-        help="💡 Pro tip: Be specific and detailed for the best results!"
+        help=" Pro tip: Be specific and detailed for the best results!"
     )
     
     # Smart Input Validation with Animated Feedback
@@ -2235,7 +2235,7 @@ with col1:
             st.markdown(f'''
             <div style="background: rgba(102, 126, 234, 0.1); padding: 0.8rem; 
                  border-radius: 8px; margin: 0.5rem 0; border-left: 3px solid #667eea;">
-                <small><strong>🔍 Detected keywords:</strong> {", ".join([f"#{word}" for word in question_keywords if len(word) > 3])}</small>
+                <small><strong> Detected keywords:</strong> {", ".join([f"#{word}" for word in question_keywords if len(word) > 3])}</small>
             </div>
             ''', unsafe_allow_html=True)
     
@@ -2256,7 +2256,7 @@ with col1:
     col_search_config1, col_search_config2 = st.columns([2, 1])
     
     with col_search_config1:
-        st.markdown("#### 🔍 **Information Sources**")
+        st.markdown("#### **Information Sources**")
         
         # Dynamic source availability check
         pdf_available = st.session_state.pdf_processed
