@@ -1927,7 +1927,7 @@ with col1:
         st.markdown(f'''
         <div class="user-message">
             <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <span style="font-size: 1.2em;">❓</span>
+                <span style="font-size: 1.2em;"></span>
                 <strong>Your Question:</strong>
             </div>
             <div style="font-size: 1.1em; line-height: 1.5;">{question}</div>
@@ -1940,7 +1940,7 @@ with col1:
             
             search_container = st.container()
             with search_container:
-                st.markdown("### 🔍 **Searching Information Sources...**")
+                st.markdown("###  **Searching Information Sources...**")
                 
                 # Create progress tracking
                 search_progress = st.progress(0)
@@ -1949,7 +1949,7 @@ with col1:
                 # Search PDF content
                 pdf_results = []
                 if st.session_state.pdf_processed and "PDF Content" in search_options:
-                    search_status.markdown('<div class="status-success">📄 Searching PDF documents...</div>', unsafe_allow_html=True)
+                    search_status.markdown('<div class="status-success"> Searching PDF documents...</div>', unsafe_allow_html=True)
                     search_progress.progress(25)
                     
                     pdf_search_results = st.session_state.vector_store.search(question, k=5 if search_depth == "Deep" else 3)
@@ -1957,25 +1957,25 @@ with col1:
                     pdf_results = [text for text, score in pdf_search_results if score > threshold]
                     
                     if pdf_results:
-                        search_status.markdown(f'<div class="status-success">📄 Found {len(pdf_results)} relevant PDF sections</div>', unsafe_allow_html=True)
+                        search_status.markdown(f'<div class="status-success"> Found {len(pdf_results)} relevant PDF sections</div>', unsafe_allow_html=True)
                     else:
-                        search_status.markdown('<div class="status-warning">📄 No relevant PDF content found</div>', unsafe_allow_html=True)
+                        search_status.markdown('<div class="status-warning"> No relevant PDF content found</div>', unsafe_allow_html=True)
                 
                 search_progress.progress(50)
                 
                 # Search web content
                 web_results = []
                 if "Web Sources" in search_options:
-                    search_status.markdown('<div class="status-success">🌐 Searching web sources...</div>', unsafe_allow_html=True)
+                    search_status.markdown('<div class="status-success"> Searching web sources...</div>', unsafe_allow_html=True)
                     search_progress.progress(75)
                     
                     max_results = 5 if search_depth == "Deep" else 3
                     web_results = st.session_state.web_searcher.search_multiple_sources(question, max_results=max_results)
                     
                     if web_results:
-                        search_status.markdown(f'<div class="status-success">🌐 Found {len(web_results)} web sources</div>', unsafe_allow_html=True)
+                        search_status.markdown(f'<div class="status-success">Found {len(web_results)} web sources</div>', unsafe_allow_html=True)
                     else:
-                        search_status.markdown('<div class="status-warning">🌐 No relevant web content found</div>', unsafe_allow_html=True)
+                        search_status.markdown('<div class="status-warning">No relevant web content found</div>', unsafe_allow_html=True)
                 
                 search_progress.progress(100)
                 time.sleep(0.5)  # Brief pause for effect
@@ -1989,7 +1989,7 @@ with col1:
             if total_sources > 0:
                 st.markdown(f'''
                 <div class="status-success" style="text-align: center; padding: 1rem; font-size: 1.1em;">
-                    🎯 <strong>Found {total_sources} relevant sources</strong>
+                     <strong>Found {total_sources} relevant sources</strong>
                     {f" • {len(pdf_results)} from PDFs" if pdf_results else ""}
                     {f" • {len(web_results)} from web" if web_results else ""}
                 </div>
@@ -1999,7 +1999,7 @@ with col1:
                 st.markdown('''
                 <div class="answer-container">
                     <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
-                        <span style="font-size: 1.5em;">🤖</span>
+                        <span style="font-size: 1.5em;"></span>
                         <h3 style="margin: 0; color: white;">AI Assistant Response</h3>
                     </div>
                 ''', unsafe_allow_html=True)
@@ -2071,7 +2071,7 @@ with col1:
                         display_animated_message(f"Streaming initialization error: {str(e)}", "error")
                 else:
                     # Complete response
-                    with st.spinner("🧠 Generating answer with Groq..."):
+                    with st.spinner(" Generating answer with Groq..."):
                         try:
                             answer = st.session_state.groq_handler.generate_answer(
                                 question, pdf_results, web_results
@@ -2116,12 +2116,12 @@ with col1:
         <div style="text-align: center; position: relative; z-index: 2;">
             <h1 class="glow-text" style="font-size: 2.5em; margin-bottom: 0.5rem;">💬 Ask Anything</h1>
             <p style="color: white; font-size: 1.2em; opacity: 0.9; margin-bottom: 1rem;">
-                🚀 Get intelligent answers from your documents and the web
+                 Get intelligent answers from your documents and the web
             </p>
             <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-                <span class="floating-badge">📄 PDF Analysis</span>
-                <span class="floating-badge">🌐 Web Search</span>
-                <span class="floating-badge">🧠 AI Powered</span>
+                <span class="floating-badge"> PDF Analysis</span>
+                <span class="floating-badge"> Web Search</span>
+                <span class="floating-badge"> AI Powered</span>
             </div>
         </div>
     </div>
@@ -2183,7 +2183,7 @@ with col1:
          background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
          backdrop-filter: blur(10px); border-radius: 15px; border: 1px solid rgba(255,255,255,0.2);">
         <h3 style="color: #667eea; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
-            <span style="font-size: 1.3em;">🤔</span>
+            <span style="font-size: 1.3em;"></span>
             What's on your mind?
         </h3>
     ''', unsafe_allow_html=True)
@@ -2192,7 +2192,7 @@ with col1:
     question = st.text_area(
         "",
         value=default_text,
-        placeholder="✨ Ask me anything! Examples:\n\n• What are the main findings in my uploaded documents?\n• How does artificial intelligence work?\n• Compare renewable energy sources\n• Summarize the key points from my PDFs\n• What's the latest news about climate change?",
+        placeholder=" Ask me anything! Examples:\n\n• What are the main findings in my uploaded documents?\n• How does artificial intelligence work?\n• Compare renewable energy sources\n• Summarize the key points from my PDFs\n• What's the latest news about climate change?",
         height=150,
         key="question_input",
         help="💡 Pro tip: Be specific and detailed for the best results!"
@@ -2206,19 +2206,19 @@ with col1:
         # Determine input quality
         if char_count < 10:
             feedback_type = "warning"
-            feedback_msg = f"⚠️ Very short question ({char_count} chars, {word_count} words) - Consider adding more details"
+            feedback_msg = f" Very short question ({char_count} chars, {word_count} words) - Consider adding more details"
             feedback_color = "#f093fb"
         elif char_count < 30:
             feedback_type = "info"
-            feedback_msg = f"💡 Short question ({char_count} chars, {word_count} words) - More context could help"
+            feedback_msg = f" Short question ({char_count} chars, {word_count} words) - More context could help"
             feedback_color = "#667eea"
         elif char_count > 500:
             feedback_type = "warning"
-            feedback_msg = f"📝 Long question ({char_count} chars, {word_count} words) - Consider breaking it down"
+            feedback_msg = f" Long question ({char_count} chars, {word_count} words) - Consider breaking it down"
             feedback_color = "#f093fb"
         else:
             feedback_type = "success"
-            feedback_msg = f"✅ Great question length ({char_count} chars, {word_count} words)"
+            feedback_msg = f" Great question length ({char_count} chars, {word_count} words)"
             feedback_color = "#00f260"
         
         st.markdown(f'''
@@ -2246,7 +2246,7 @@ with col1:
     <div class="config-panel" style="background: linear-gradient(135deg, #667eea, #764ba2);
          color: white; padding: 1.5rem; border-radius: 15px; margin: 2rem 0;">
         <h3 style="margin: 0 0 1rem 0; display: flex; align-items: center; gap: 0.5rem;">
-            <span style="font-size: 1.3em;">⚙️</span>
+            <span style="font-size: 1.3em;"></span>
             Search & Response Settings
         </h3>
     </div>
@@ -2265,13 +2265,13 @@ with col1:
         if pdf_available:
             try:
                 stats = st.session_state.vector_store.get_stats()
-                pdf_info = f"📄 PDF Content ({stats['total_texts']} chunks available)"
+                pdf_info = f" PDF Content ({stats['total_texts']} chunks available)"
             except:
-                pdf_info = "📄 PDF Content (Available)"
+                pdf_info = " PDF Content (Available)"
         else:
-            pdf_info = "📄 PDF Content (❌ No PDFs uploaded)"
+            pdf_info = " PDF Content ( No PDFs uploaded)"
         
-        web_info = "🌐 Web Sources (✅ Real-time search)"
+        web_info = " Web Sources ( Real-time search)"
         
         # Source selection with enhanced display
         source_options = []
