@@ -2117,7 +2117,7 @@ st.markdown('''
 .floating-badge {
     background: linear-gradient(45 deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
     color: white;
-    padding: 0.5 rem 1rem;
+    padding: 0.5 rem 1 rem;
     border-radius: 20px;
     border: 1px solid rgba(255,255,255,0.3);
     animation: floatBadge 3s ease-in-out infinite alternate;
