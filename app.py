@@ -1665,8 +1665,7 @@ with col1:
             total_sources = len(pdf_results) + len(web_results)
             if total_sources > 0:
                 st.markdown(f'''
-                <div class="status-success" style="text-align: center; padding: 1rem; font-size: 1.1em;">
-                    🎯 <strong>Found {total_sources} relevant sources</strong>
+                <div class="status-success" style="text-align: center; padding: 1rem; font-size: 1.1em;"> <strong>Found {total_sources} relevant sources</strong>
                     {f" • {len(pdf_results)} from PDFs" if pdf_results else ""}
                     {f" • {len(web_results)} from web" if web_results else ""}
                 </div>
@@ -1676,7 +1675,7 @@ with col1:
                 st.markdown('''
                 <div class="answer-container">
                     <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
-                        <span style="font-size: 1.5em;">🤖</span>
+                        <span style="font-size: 1.5em;"></span>
                         <h3 style="margin: 0; color: white;">AI Assistant Response</h3>
                     </div>
                 ''', unsafe_allow_html=True)
