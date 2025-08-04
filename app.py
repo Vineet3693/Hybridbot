@@ -1759,8 +1759,7 @@ with col1:
             voice_question = st.session_state.voice_integration.handle_voice_input()
             if voice_question:
                 st.markdown(f'''
-                <div class="voice-detected">
-                    🎤 <strong>Voice Input Detected:</strong> {voice_question}
+                <div class="voice-detected"><strong>Voice Input Detected:</strong> {voice_question}
                 </div>
                 ''', unsafe_allow_html=True)
         except Exception as e:
@@ -1784,11 +1783,11 @@ with col1:
     if question:
         char_count = len(question)
         if char_count < 10:
-            st.markdown(f'<div class="status-warning">⚠️ Question is quite short ({char_count} chars). Consider being more specific.</div>', unsafe_allow_html=True)
+            st.markdown(f'<div class="status-warning">Question is quite short ({char_count} chars). Consider being more specific.</div>', unsafe_allow_html=True)
         elif char_count > 500:
-            st.markdown(f'<div class="status-warning">⚠️ Long question ({char_count} chars). Consider breaking it down.</div>', unsafe_allow_html=True)
+            st.markdown(f'<div class="status-warning"> Long question ({char_count} chars). Consider breaking it down.</div>', unsafe_allow_html=True)
         else:
-            st.markdown(f'<div class="status-success">✅ Good question length ({char_count} chars)</div>', unsafe_allow_html=True)
+            st.markdown(f'<div class="status-success"> Good question length ({char_count} chars)</div>', unsafe_allow_html=True)
     
     st.markdown('</div>', unsafe_allow_html=True)
     
@@ -1808,7 +1807,7 @@ with col1:
         # Dynamic default based on PDF availability
         default_sources = ["PDF Content", "Web Sources"] if st.session_state.pdf_processed else ["Web Sources"]
         if not st.session_state.pdf_processed:
-            st.markdown('<div class="status-warning">📄 No PDFs loaded - Web search only</div>', unsafe_allow_html=True)
+            st.markdown('<div class="status-warning"> No PDFs loaded - Web search only</div>', unsafe_allow_html=True)
         
         search_options = st.multiselect(
             "Select information sources:",
@@ -1824,9 +1823,9 @@ with col1:
                 if st.session_state.pdf_processed:
                     try:
                         stats = st.session_state.vector_store.get_stats()
-                        scope_info.append(f"📄 {stats['total_texts']} PDF chunks")
+                        scope_info.append(f" {stats['total_texts']} PDF chunks")
                     except:
-                        scope_info.append("📄 PDF content")
+                        scope_info.append(" PDF content")
             
             if "Web Sources" in search_options:
                 scope_info.append("🌐 Real-time web search")
