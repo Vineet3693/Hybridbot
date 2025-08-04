@@ -1704,7 +1704,7 @@ with col1:
                                         response_placeholder.markdown(
                                             f'''
                                             <div class="streaming-text" style="color: white; line-height: 1.6;">
-                                                {full_response}<span style="animation: blink 1s infinite;">▌</span>
+                                                {full_response}<span style="animation: blink 1s infinite;"></span>
                                             </div>
                                             <style>
                                                 @keyframes blink {{
