@@ -2115,7 +2115,7 @@ with col1:
 st.markdown('''
 <style>
 .floating-badge {
-    background: linear-gradient(45deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+    background: linear-gradient(45 deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 20px;
