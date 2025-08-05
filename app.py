@@ -357,8 +357,7 @@ with col2:
     6. **Get intelligent answers**!
     
     ### ✨ Features:
-    - 📄 **PDF text extraction**
-    - 🔍 **OCR for scanned documents**  
+    - 📄 **PDF text extraction**  
     - 🌐 **Web search integration**
     - 🧠 **Semantic search**
     - 💬 **Natural language Q&A**
@@ -366,10 +365,8 @@ with col2:
     - 🎯 **Source citations**
     
     ### 🎛️ Models Available:
-    - **Mixtral 8x7B** (Recommended)
     - **Llama3 70B** (Most powerful)
     - **Llama3 8B** (Fast)
-    - **Gemma 7B** (Efficient)
     """)
     
     # Model info
@@ -415,6 +412,6 @@ st.markdown("---")
 st.markdown("""
 <div style='text-align: center; color: #666;'>
     <p>🤖 <strong>Hybrid AI Bot</strong> - Built with ❤️ using Streamlit, Groq API, FAISS, and open-source AI tools</p>
-    <p>🔧 <strong>Tech Stack:</strong> Streamlit • Groq • FAISS • Sentence Transformers • PyPDF2 • Tesseract OCR</p>
+    <p>🔧 <strong>Tech Stack:</strong> Streamlit • Groq • FAISS • Sentence Transformers • PyPDF2 </p>
 </div>
 """, unsafe_allow_html=True)
