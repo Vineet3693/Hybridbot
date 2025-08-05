@@ -2960,7 +2960,7 @@ st.markdown('''
         st.markdown("---")
         st.markdown('''
         <div style=background: linear-gradient(135 deg, rgba(240, 147, 251, 0.1), rgba(245, 87, 108, 0.1));
-             padding: 1.5 rem; border-radius: 15 px; margin: 2rem 0;>
+             padding: 1.5 rem; border-radius: 15 px; margin: 2 rem 0;>
             <h4 style=color: #f093fb; margin: 0 0 1 rem 0; display: flex; align-items: center; gap: 0.5 rem;>
                 <span></span> Pro Tips for Better Results
             </h4>
