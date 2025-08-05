@@ -3072,7 +3072,7 @@ st.markdown('''
     @keyframes slideInLeft {
         from {
             opacity: 0;
-            transform: translateX(-50px);
+            transform: translateX(-50 px);
         }
         to {
             opacity: 1;
