@@ -3130,8 +3130,7 @@ st.markdown('''
         position: relative;
         border-radius: 15 px;
         background: linear-gradient(45 deg, #667eea, #764ba2);
-        padding: 2 px;
-    }
+        padding: 2 px;}
     
     .glow-border::before {
         content: '';
