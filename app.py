@@ -2995,14 +2995,14 @@ st.markdown('''
             </summary>
             <div style=margin-top: 1 rem; font-size: 0.9 em;>
                 <strong>Shortcuts:</strong><br>
-                • <code>Ctrl/Cmd + Enter</code> - Submit question<br>
-                • <code>Ctrl/Cmd + /</code> - Focus on question input<br>
-                • <code>Escape</code> - Clear current input<br><br>
+                 <code>Ctrl/Cmd + Enter</code> - Submit question<br>
+                 <code>Ctrl/Cmd + /</code> - Focus on question input<br>
+                 <code>Escape</code> - Clear current input<br><br>
                 
                 <strong>Voice Commands (if enabled):</strong><br>
-                • Say "Ask question" to start voice input<br>
-                • Say "Read answer" to hear the response<br>
-                • Say "Clear" to reset the input
+                 Say "Ask question" to start voice input<br>
+                 Say "Read answer" to hear the response<br>
+                 Say "Clear" to reset the input
             </div>
         </details>
     </div>
@@ -3017,8 +3017,8 @@ st.markdown('''
         <div style=background: linear-gradient(135 deg, rgba(17, 153, 142, 0.1), rgba(56, 239, 125, 0.1));
              padding: 1 rem; border-radius: 10 px; margin: 1 rem 0; text-align: center;>
             <strong> Session Stats:</strong>
-            {len(st.session_state.chat_history)} questions • 
-            {total_chars:,} response characters • 
+            {len(st.session_state.chat_history)} questions  
+            {total_chars:,} response characters 
             ~{avg_response_time:.1f}s avg response time
         </div>
         ''', unsafe_allow_html=True)
