@@ -2148,8 +2148,8 @@ st.markdown('''
             voice_question = st.session_state.voice_integration.handle_voice_input()
             if voice_question:
                 st.markdown(f'''
-                <div class="voice-detected" style=background: linear-gradient(135deg, #00f260, #0575e6);
-                     color: white; padding: 1 rem; border-radius: 10px; margin: 1rem 0;
+                <div class="voice-detected" style=background: linear-gradient(135 deg, #00f260, #0575e6);
+                     color: white; padding: 1 rem; border-radius: 10 px; margin: 1 rem 0;
                      animation: slideInRight 0.5s ease-out;">
                     <div style="display: flex; align-items: center; gap: 0.5rem;">
                         <span style="font-size: 1.5 em;"></span>
@@ -2166,10 +2166,10 @@ st.markdown('''
     # Enhanced Question Input with Live Validation
     st.markdown('''
     <div class="input-section" style="margin: 2rem 0; padding: 1.5rem; 
-         background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
-         backdrop-filter: blur(10px); border-radius: 15px; border: 1px solid rgba(255,255,255,0.2);">
+         background: linear-gradient(135 deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+         backdrop-filter: blur(10 px); border-radius: 15 px; border: 1 px solid rgba(255,255,255,0.2);">
         <h3 style="color: #667eea; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
-            <span style="font-size: 1.3em;"></span>
+            <span style="font-size: 1.3 em;"></span>
             What's on your mind?
         </h3>
     ''', unsafe_allow_html=True)
