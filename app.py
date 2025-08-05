@@ -240,54 +240,7 @@ lottie_ai = load_lottie_url("https://assets10.lottiefiles.com/packages/lf20_x62c
 
 
 
-st.markdown("""
-<style>
-    .main-header {
-        border-radius: 16px;
-        background: rgba(102,126,234,0.82);
-        box-shadow: 0 8px 32px 0 rgba(31,38,135,0.13);
-        backdrop-filter: blur(4px);
-        color: white;
-        padding: 2rem 0 1rem 0;
-        margin-bottom: 2rem;
-        font-size: 2.3rem;
-        font-weight: 700;
-        letter-spacing: 1px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        animation: fadeInDown 1s;
-    }
-    .chat-message {
-        background: rgba(255,255,255,0.75);
-        box-shadow: 0 2px 8px 0 rgba(102,126,234,0.09);
-        border-left: 5px solid #764ba2;
-        margin: 1rem 0;
-        padding: 1.2rem;
-        border-radius: 14px;
-        transition: box-shadow 0.3s;
-    }
-    .chat-message:hover {
-        box-shadow: 0 4px 16px 0 rgba(102,126,234,0.16);
-    }
-    .source-box {
-        background: rgba(231,243,255,0.8);
-        border: 1.5px solid #b3d9ff;
-        margin-top: 0.5rem;
-        border-radius: 8px;
-        padding: 0.7rem;
-        font-size: 0.95rem;
-        transition: background 0.2s;
-    }
-    .source-box:hover {
-        background: #e0e7ff;
-    }
-    @keyframes fadeInDown {
-      0% { opacity: 0; transform: translateY(-24px);}
-      100% { opacity: 1; transform: translateY(0);}
-    }
-</style>
-""", unsafe_allow_html=True)
+
 # Animated RGB header with Lottie
 st.markdown('<div class="rgb-header">', unsafe_allow_html=True)
 col1, col2 = st.columns([1, 6])
