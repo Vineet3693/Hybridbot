@@ -2383,7 +2383,7 @@ st.markdown('''
             missing_items.append("🔍 Select search sources")
         
         st.markdown(f'''
-        <div style=background: linear-gradient(135deg, #ff416c, #ff4b2b); 
+        <div style=background: linear-gradient(135 deg, #ff416c, #ff4b2b); 
              color: white; padding: 1 rem; border-radius: 10 px; margin: 1 rem 0;
              animation: shake 0.5 s ease-in-out;>
             <strong> Ready to ask? Please:</strong><br>
