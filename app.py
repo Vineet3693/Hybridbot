@@ -2118,8 +2118,8 @@ st.markdown('''
     background: linear-gradient(45 deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
     color: white;
     padding: 0.5 rem 1 rem;
-    border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 20 px;
+    border: 1 px solid rgba(255,255,255,0.3);
     animation: floatBadge 3s ease-in-out infinite alternate;
     backdrop-filter: blur(10px);
 }
@@ -2133,7 +2133,7 @@ st.markdown('''
     # Voice Input Section with Enhanced UI
     if VOICE_AVAILABLE and hasattr(st.session_state, 'voice_integration'):
         st.markdown('''
-        <div class="voice-section" style="margin: 2rem 0; padding: 1.5rem; 
+        <div class="voice-section" style="margin: 2 rem 0; padding: 1.5rem; 
              background: linear-gradient(135deg, #ff6b6b, #feca57); 
              border-radius: 15px; position: relative; overflow: hidden;">
             <div style="position: relative; z-index: 2;">
@@ -2149,13 +2149,13 @@ st.markdown('''
             if voice_question:
                 st.markdown(f'''
                 <div class="voice-detected" style="background: linear-gradient(135deg, #00f260, #0575e6);
-                     color: white; padding: 1rem; border-radius: 10px; margin: 1rem 0;
+                     color: white; padding: 1 rem; border-radius: 10px; margin: 1rem 0;
                      animation: slideInRight 0.5s ease-out;">
                     <div style="display: flex; align-items: center; gap: 0.5rem;">
-                        <span style="font-size: 1.5em;">🎤</span>
+                        <span style="font-size: 1.5 em;">🎤</span>
                         <strong>Voice Detected:</strong>
                     </div>
-                    <p style="margin: 0.5rem 0 0 0; font-size: 1.1em;">{voice_question}</p>
+                    <p style="margin: 0.5 rem 0 0 0; font-size: 1.1em;">{voice_question}</p>
                 </div>
                 ''', unsafe_allow_html=True)
         except Exception as e:
