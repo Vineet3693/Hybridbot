@@ -44,13 +44,6 @@ st.markdown("""
     </div>
 </div>
 """, unsafe_allow_html=True)
-
-# Now your line 14 should work
-lottie_ai = load_lottie_url("https://assets10.lottiefiles.com/packages/lf20_x62chJ.json")
-# Lottie animation: AI robot (change URL for other animations)
-lottie_ai = load_lottie_url("https://assets10.lottiefiles.com/packages/lf20_x62chJ.json")
-
-
 # Page configuration
 st.set_page_config(
     page_title="DocuMind AI",
@@ -152,7 +145,7 @@ def display_sources(pdf_results: List[str], web_results: List[Dict]):
                     st.markdown(f'<div class="source-box">🌐 {result["title"]}: {result["snippet"][:150]}...{url_display}</div>', unsafe_allow_html=True)
 
 # Main UI
-st.markdown('<div class="main-header"><h1>🤖 Hybrid AI Bot with Groq</h1><p>Powered by Groq API - Extract data from PDFs and search the web for intelligent answers</p></div>', unsafe_allow_html=True)
+
 
 # Sidebar for PDF upload and settings
 with st.sidebar:
