@@ -2563,11 +2563,11 @@ st.markdown('''
                 st.markdown(f'''
                 <div style=background: linear-gradient(135 deg, #00f260, #0575e6); 
                      color: white; padding: 1.5 rem; border-radius: 15 px; margin: 1 rem 0;
-                     text-align: center; animation: slideInUp 0.5 s ease-out;">
+                     text-align: center; animation: slideInUp 0.5 s ease-out;>
                     <div style=font-size: 1.3 em; margin-bottom: 0.5 rem;>
                          <strong>Search Complete!</strong>
                     </div>
-                    <div style=font-size: 1.1em;>
+                    <div style=font-size: 1.1 em;>
                         Found <strong>{total_sources} relevant sources</strong>
                         {f" • {len(pdf_results)} from PDFs" if pdf_results else ""}
                         {f" • {len(web_results)} from web" if web_results else ""}
@@ -2578,12 +2578,12 @@ st.markdown('''
                 # AI Response Generation
                 st.markdown('''
                 <div class="answer-container" style=animation: slideInLeft 0.5 s ease-out;>
-                    <div style=display: flex; align-items: center; gap: 1 rem; margin-bottom: 1.5rem;>
+                    <div style=display: flex; align-items: center; gap: 1 rem; margin-bottom: 1.5 rem;>
                         <div style=background: linear-gradient(45deg, #11998e, #38ef7d); 
                              padding: 12 px; border-radius: 50 %; color: white; font-size: 1.5 em;></div>
                         <div>
                             <h2 style=margin: 0; color: white;>AI Assistant</h2>
-                            <p style=margin: 0; color: rgba(255,255,255,0.8); font-size: 0.9em;>
+                            <p style=margin: 0; color: rgba(255,255,255,0.8); font-size: 0.9 em;>
                                 Powered by Groq Processing {total_sources} sources
                             </p>
                         </div>
