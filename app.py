@@ -2739,7 +2739,7 @@ st.markdown('''
                 # Quick Actions Panel
                 st.markdown('''
                 <div style=background: linear-gradient(135 deg, rgba(17, 153, 142, 0.2), rgba(56, 239, 125, 0.2));
-                     padding: 1 rem; border-radius: 15 px; margin: 1 rem 0; border: 1px solid rgba(17, 153, 142, 0.3);>
+                     padding: 1 rem; border-radius: 15 px; margin: 1 rem 0; border: 1 px solid rgba(17, 153, 142, 0.3);>
                     <h5 style=color: #11998e; margin: 0 0 0.5 rem 0;> Quick Actions</h5>
                 ''', unsafe_allow_html=True)
                 
