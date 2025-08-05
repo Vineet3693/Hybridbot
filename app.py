@@ -2977,7 +2977,7 @@ st.markdown('''
                     <strong> Iterate</strong><br>
                     <small>Build on previous answers with follow-up questions for deeper insights</small>
                 </div>
-                <div style=background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px;>
+                <div style=background: rgba(255,255,255,0.05); padding: 1 rem; border-radius: 8 px;>
                     <strong> Compare Sources</strong><br>
                     <small>Enable both PDF and web search to get comprehensive, well-rounded answers</small>
                 </div>
@@ -2993,7 +2993,7 @@ st.markdown('''
             <summary style=color: #667eea; cursor: pointer; font-weight: 500;>
                  Keyboard Shortcuts & Tips
             </summary>
-            <div style=margin-top: 1rem; font-size: 0.9em;>
+            <div style=margin-top: 1rem; font-size: 0.9 em;>
                 <strong>Shortcuts:</strong><br>
                 • <code>Ctrl/Cmd + Enter</code> - Submit question<br>
                 • <code>Ctrl/Cmd + /</code> - Focus on question input<br>
