@@ -3142,14 +3142,14 @@ st.markdown('''
         mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
         mask-composite: exclude;
         animation: rotate 3 s linear infinite;
-    }
+    
     
     @keyframes rotate {
         from {
-            transform: rotate(0deg);
+            transform: rotate(0 deg);
         }
         to {
-            transform: rotate(360deg);
+            transform: rotate(360 deg);
         }
     }
     
