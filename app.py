@@ -2789,7 +2789,7 @@ st.markdown('''
                                     <div style=background: rgba(102, 126, 234, 0.1); padding: 0.8 rem; 
                                          border-radius: 8 px; margin: 0.5 rem 0; border-left: 3 px solid #667eea;>
                                         <strong>PDF Source {i}:</strong><br>
-                                        <em>Relevance: High • Length: {len(result)} chars</em><br>
+                                        <em>Relevance: High  Length: {len(result)} chars</em><br>
                                         {result[:300]}{"..." if len(result) > 300 else ""}
                                     </div>
                                     ''', unsafe_allow_html=True)
