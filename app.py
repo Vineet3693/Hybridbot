@@ -2415,10 +2415,10 @@ st.markdown('''
             import random
             selected_question = random.choice(random_questions)
             st.markdown(f'''
-            <div style="background: linear-gradient(135deg, #667eea, #764ba2); 
-                 color: white; padding: 1rem; border-radius: 10px; margin: 1rem 0;
-                 animation: slideInUp 0.5s ease-out;">
-                <strong>🎲 Random Question:</strong><br>
+            <div style=background: linear-gradient(135 deg, #667eea, #764ba2); 
+                 color: white; padding: 1 rem; border-radius: 10 px; margin: 1 rem 0;
+                 animation: slideInUp 0.5 s ease-out;>
+                <strong> Random Question:</strong><br>
                 {selected_question}
             </div>
             ''', unsafe_allow_html=True)
@@ -2443,13 +2443,13 @@ st.markdown('''
     if ask_button and can_ask:
         # Display user question with style
         st.markdown(f'''
-        <div class="user-message" style="animation: slideInLeft 0.5 s ease-out;">
+        <div class="user-message" style=animation: slideInLeft 0.5 s ease-out;>
             <div style=display: flex; align-items: center; gap: 0.8 rem; margin-bottom: 1 rem;>
                 <div style=background: linear-gradient(45 deg, #667eea, #764ba2); 
                      padding: 8 px; border-radius: 50 % ; color: white; font-size: 1.2em;></div>
                 <h3 style=margin: 0; color: white;">Your Question</h3>
             </div>
-            <div style="font-size: 1.1 em; line-height: 1.6; color: white; 
+            <div style=font-size: 1.1 em; line-height: 1.6; color: white; 
                  background: rgba(255,255,255,0.1); padding: 1 rem; border-radius: 8 px;>
                 {question}
             </div>
@@ -2459,9 +2459,9 @@ st.markdown('''
         try:
             # Enhanced Search Process with Real-time Updates
             st.markdown('''
-            <div class="search-process" style="background: linear-gradient(135deg, #667eea, #764ba2);
-                 color: white; padding: 1.5rem; border-radius: 15px; margin: 2rem 0;
-                 animation: slideInRight 0.5 s ease-out;">
+            <div class="search-process" style=background: linear-gradient(135deg, #667eea, #764ba2);
+                 color: white; padding: 1.5 rem; border-radius: 15 px; margin: 2 rem 0;
+                 animation: slideInRight 0.5 s ease-out;>
                 <h3 style=margin: 0 0 1 rem 0; display: flex; align-items: center; gap: 0.5 rem;>
                     <span class="loading-spinner" style=width: 20 px; height: 20 px; border: 2 px solid rgba(255,255,255,0.3); border-top: 2 px solid white;></span>
                     Searching Information Sources
