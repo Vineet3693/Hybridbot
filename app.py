@@ -3211,7 +3211,7 @@ st.markdown('''
     
     ::-webkit-scrollbar-thumb:hover {
         background: linear-gradient(135 deg, #764ba2, #667eea);
-    }
+    
     
     /* Print styles */
     @media print {
