@@ -3309,5 +3309,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
-''', unsafe_allow_html=True)
 '''
