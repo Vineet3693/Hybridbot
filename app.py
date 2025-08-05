@@ -2208,9 +2208,9 @@ st.markdown('''
             feedback_color = "#00f260"
         
         st.markdown(f'''
-        <div style="background: linear-gradient(135deg, {feedback_color}, {feedback_color}20);
-             color: white; padding: 0.8rem; border-radius: 10px; margin: 1rem 0;
-             animation: slideInUp 0.3s ease-out; font-weight: 500;">
+        <div style=background: linear-gradient(135deg, {feedback_color}, {feedback_color}20);
+             color: white; padding: 0.8 rem; border-radius: 10 px; margin: 1 rem 0;
+             animation: slideInUp 0.3 s ease-out; font-weight: 500;>
             {feedback_msg}
         </div>
         ''', unsafe_allow_html=True)
@@ -2219,8 +2219,8 @@ st.markdown('''
         if char_count > 20:
             question_keywords = question.lower().split()[:5]
             st.markdown(f'''
-            <div style="background: rgba(102, 126, 234, 0.1); padding: 0.8rem; 
-                 border-radius: 8px; margin: 0.5rem 0; border-left: 3px solid #667eea;">
+            <div style=background: rgba(102, 126, 234, 0.1); padding: 0.8 rem; 
+                 border-radius: 8px; margin: 0.5 rem 0; border-left: 3 px solid #667eea;">
                 <small><strong> Detected keywords:</strong> {", ".join([f"#{word}" for word in question_keywords if len(word) > 3])}</small>
             </div>
             ''', unsafe_allow_html=True)
