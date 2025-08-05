@@ -3293,6 +3293,10 @@ document.addEventListener('DOMContentLoaded', function() {
         subtree: true
     });
     
+    
+st.markdown('''
+<script>
+document.addEventListener('DOMContentLoaded', function() {
     // Add loading states to buttons
     const buttons = document.querySelectorAll('[data-testid="stButton"] button');
     buttons.forEach(button => {
@@ -3309,4 +3313,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
-''',unsafe_allow_html=True)
+''', unsafe_allow_html=True)
