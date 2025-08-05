@@ -2633,7 +2633,7 @@ st.markdown('''
                                     full_response += chunk.choices[0].delta.content
                                     response_placeholder.markdown(f'''
                                     <div style=color: white; line-height: 1.8; font-size: 1.05 em; padding: 1 rem;>
-                                        {full_response}<span style=animation: blink 1s infinite; color: #667eea;></span>
+                                        {full_response}<span style=animation: blink is infinite; color: #667eea;></span>
                                     </div>
                                     <style>
                                         @keyframes blink {{
