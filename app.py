@@ -2305,7 +2305,7 @@ st.markdown('''
         
         st.markdown(f'''
         <div style=background: rgba(255,255,255,0.1); padding: 0.8 rem; 
-             border-radius: 8 px; margin: 0.5 rem 0; font-size: 0.9 em;">
+             border-radius: 8 px; margin: 0.5 rem 0; font-size: 0.9 em;>
             💡 {mode_explanations[search_mode]}
         </div>
         ''', unsafe_allow_html=True)
