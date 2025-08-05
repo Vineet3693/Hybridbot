@@ -3019,7 +3019,7 @@ st.markdown('''
             <strong> Session Stats:</strong>
             {len(st.session_state.chat_history)} questions  
             {total_chars:,} response characters 
-            ~{avg_response_time:.1f}s avg response time
+            ~{avg_response_time:.f}s avg response time
         </div>
         ''', unsafe_allow_html=True)
 
