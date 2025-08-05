@@ -2822,11 +2822,11 @@ st.markdown('''
                     <div style=background: rgba(255,255,255,0.1); padding: 1 rem; 
                          border-radius: 8 px; text-align: left;>
                         <strong> Try these suggestions:</strong><br>
-                        • Rephrase your question with different keywords<br>
-                        • Upload more relevant PDF documents<br>
-                        • Check if web search is enabled<br>
-                        • Try a broader or more specific question<br>
-                        • Use simpler language or technical terms
+                         Rephrase your question with different keywords<br>
+                         Upload more relevant PDF documents<br>
+                         Check if web search is enabled<br>
+                         Try a broader or more specific question<br>
+                         Use simpler language or technical terms
                     </div>
                 </div>
                 ''', unsafe_allow_html=True)
@@ -2844,7 +2844,7 @@ st.markdown('''
                     if st.button(" Upload More PDFs", help="Add more documents"):
                         st.markdown('''
                         <div style=background: rgba(102, 126, 234, 0.2); padding: 1 rem; 
-                             border-radius: 8 px; margin: 1 rem 0;">
+                             border-radius: 8 px; margin: 1 rem 0;>
                             Use the sidebar to upload more PDF documents that might contain relevant information.
                         </div>
                         ''', unsafe_allow_html=True)
@@ -2856,7 +2856,7 @@ st.markdown('''
             st.markdown('''
             <div style=background: rgba(255, 65, 108, 0.2); padding: 1.5 rem; 
                  border-radius: 15 px; margin: 1 rem 0; border: 1 px solid rgba(255, 65, 108, 0.3);>
-                <h4 style=color: #ff416c; margin: 0 0 1rem 0;>Error Recovery</h4>
+                <h4 style=color: #ff416c; margin: 0 0 1 rem 0;>Error Recovery</h4>
                 <p>Something went wrong. Here are some things you can try:</p>
             </div>
             ''', unsafe_allow_html=True)
