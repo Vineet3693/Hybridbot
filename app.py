@@ -2120,12 +2120,12 @@ st.markdown('''
     padding: 0.5 rem 1 rem;
     border-radius: 20 px;
     border: 1 px solid rgba(255,255,255,0.3);
-    animation: floatBadge 3s ease-in-out infinite alternate;
-    backdrop-filter: blur(10px);
+    animation: floatBadge 3 s ease-in-out infinite alternate;
+    backdrop-filter: blur(10 px);
 }
 @keyframes floatBadge {
-    0% { transform: translateY(0px); }
-    100% { transform: translateY(-5px); }
+    0% { transform: translateY(0 px); }
+    100% { transform: translateY(-5 px); }
 }
 </style>
 ''', unsafe_allow_html=True)
@@ -2133,7 +2133,7 @@ st.markdown('''
     # Voice Input Section with Enhanced UI
     if VOICE_AVAILABLE and hasattr(st.session_state, 'voice_integration'):
         st.markdown('''
-        <div class="voice-section" style="margin: 2 rem 0; padding: 1.5rem; 
+        <div class="voice-section" style="margin: 2 rem 0; padding: 1.5 rem; 
              background: linear-gradient(135deg, #ff6b6b, #feca57); 
              border-radius: 15px; position: relative; overflow: hidden;">
             <div style="position: relative; z-index: 2;">
