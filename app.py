@@ -2339,15 +2339,15 @@ st.markdown('''
         }
         
         st.markdown(f'''
-        <div style="background: rgba(17, 153, 142, 0.2); padding: 0.8rem; 
-             border-radius: 8px; margin: 0.5rem 0; font-size: 0.9em; 
-             border-left: 3px solid #11998e;">
+        <div style=background: rgba(17, 153, 142, 0.2); padding: 0.8 rem; 
+             border-radius: 8 px; margin: 0.5 rem 0; font-size: 0.9 em; 
+             border-left: 3 px solid #11998e;>
             {style_previews[response_mode]}
         </div>
         ''', unsafe_allow_html=True)
     
     with col_response2:
-        st.markdown("**🎨 Customization**")
+        st.markdown("** Customization**")
         
         with st.expander("Advanced Options"):
             temperature = st.slider(
