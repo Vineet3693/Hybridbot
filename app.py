@@ -28,6 +28,51 @@ def load_lottie_url(url):
         return None
     return r.json()
 
+# Professional header with icons
+st.markdown("""
+<div style="text-align: center; padding: 2rem 0;">
+    <h1 class="glow-text">🚀 DocuMind AI Pro</h1>
+    <p style="font-size: 1.2rem; color: #8b949e;">
+        Advanced Document Intelligence & Web Search Platform
+    </p>
+    <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 1rem;">
+        <span class="status-good">⚡ Groq Powered</span>
+        <span class="status-info">🧠 AI Enhanced</span>
+        <span class="status-warning">🔒 Secure</span>
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
+# Professional sidebar
+with st.sidebar:
+    st.markdown('<h2 class="glow-text">⚙️ Control Panel</h2>', unsafe_allow_html=True)
+    
+    # Model selection with icons
+    st.markdown("### 🤖 AI Configuration")
+    model = st.selectbox(
+        "Select Model:",
+        options=["llama3-70b-8192", "mixtral-8x7b-32768", "llama3-8b-8192"],
+        format_func=lambda x: f"🧠 {x.replace('-', ' ').title()}"
+    )
+    
+    # Enhanced sliders
+    st.markdown("### 🎛️ Parameters")
+    col1, col2 = st.columns(2)
+    with col1:
+        temperature = st.slider("🌡️ Creativity", 0.0, 1.0, 0.7)
+    with col2:
+        max_tokens = st.slider("📏 Response Length", 100, 2000, 1000)
+
+# Professional metrics display
+col1, col2, col3, col4 = st.columns(4)
+with col1:
+    st.metric("📊 Status", "Active", delta="Online")
+with col2:
+    st.metric("🗂️ Documents", "0", delta="Ready")
+with col3:
+    st.metric("🧠 Model", "Llama3-70B", delta="Optimal")
+with col4:
+    st.metric("⚡ Speed", "Fast", delta="Real-time")
 
 # Custom CSS for dark professional theme
 st.markdown("""
