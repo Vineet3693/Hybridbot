@@ -190,7 +190,7 @@ with st.sidebar:
     )
     max_tokens = st.slider(
         "Max Response Length:", 
-        100,400,1200,10000,20000,5000, 2000, 1000, 100,
+        100, 2000, 1000, 100,
         help="Maximum number of tokens in the response"
     )
     
