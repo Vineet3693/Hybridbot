@@ -1581,16 +1581,8 @@ with col1:
     # Main Processing Logic with Enhanced UI
     if ask_button and question and search_options:
         # Question Analysis
-        st.markdown(f'''
-        <div class="user-message">
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <span style="font-size: 1.2em;"></span>
-                <strong>Your Question:</strong>
-            </div>
-            <div style="font-size: 1.1em; line-height: 1.5;">{question}</div>
-        </div>
-        ''', unsafe_allow_html=True)
         
+       
         try:
             # Enhanced search phase with visual feedback
             st.markdown('<div class="search-animation">', unsafe_allow_html=True)
