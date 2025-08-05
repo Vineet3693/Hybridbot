@@ -2148,7 +2148,7 @@ st.markdown('''
             voice_question = st.session_state.voice_integration.handle_voice_input()
             if voice_question:
                 st.markdown(f'''
-                <div class="voice-detected" style="background: linear-gradient(135deg, #00f260, #0575e6);
+                <div class="voice-detected" style=background: linear-gradient(135deg, #00f260, #0575e6);
                      color: white; padding: 1 rem; border-radius: 10px; margin: 1rem 0;
                      animation: slideInRight 0.5s ease-out;">
                     <div style="display: flex; align-items: center; gap: 0.5rem;">
