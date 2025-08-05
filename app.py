@@ -2772,10 +2772,10 @@ st.markdown('''
                         <div style=background: rgba(102, 126, 234, 0.1); padding: 1 rem; 
                              border-radius: 8 px; margin: 1 rem 0;>
                              <strong>Tips to refine your search:</strong><br>
-                            • Be more specific about what you want to know<br>
-                            • Add context or background information<br>
-                            • Specify the type of answer you need<br>
-                            • Try different keywords or phrases
+                             Be more specific about what you want to know<br>
+                            Add context or background information<br>
+                            Specify the type of answer you need<br>
+                            Try different keywords or phrases
                         </div>
                         ''', unsafe_allow_html=True)
                 
@@ -2787,7 +2787,7 @@ st.markdown('''
                                 for i, result in enumerate(pdf_results, 1):
                                     st.markdown(f'''
                                     <div style=background: rgba(102, 126, 234, 0.1); padding: 0.8 rem; 
-                                         border-radius: 8 px; margin: 0.5 rem 0; border-left: 3px solid #667eea;>
+                                         border-radius: 8 px; margin: 0.5 rem 0; border-left: 3 px solid #667eea;>
                                         <strong>PDF Source {i}:</strong><br>
                                         <em>Relevance: High • Length: {len(result)} chars</em><br>
                                         {result[:300]}{"..." if len(result) > 300 else ""}
@@ -2811,7 +2811,7 @@ st.markdown('''
             else:
                 # No Sources Found
                 st.markdown('''
-                <div style=background: linear-gradient(135deg, #ff416c, #ff4b2b); 
+                <div style=background: linear-gradient(135 deg, #ff416c, #ff4b2b); 
                      color: white; padding: 2 rem; border-radius: 15 px; margin: 2 rem 0;
                      text-align: center; animation: shake 0.5 s ease-in-out;>
                     <div style=font-size: 2 em; margin-bottom: 1 rem;></div>
