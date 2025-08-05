@@ -2619,7 +2619,7 @@ st.markdown('''
                             response_placeholder.markdown('''
                             <div style=color: rgba(255,255,255,0.7); padding: 1 rem;>
                                 <span class="loading-spinner" style=width: 16 px; height: 16 px; 
-                                      border: 2px solid rgba(255,255,255,0.3); 
+                                      border: 2 px solid rgba(255,255,255,0.3); 
                                       border-top: 2 px solid white; margin-right: 0.5 rem;></span>
                                 AI is thinking and typing...
                             </div>
