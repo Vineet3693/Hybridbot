@@ -2964,16 +2964,16 @@ st.markdown('''
             <h4 style=color: #f093fb; margin: 0 0 1 rem 0; display: flex; align-items: center; gap: 0.5 rem;>
                 <span></span> Pro Tips for Better Results
             </h4>
-            <div style=display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;>
+            <div style=display: grid; grid-template-columns: repeat(auto-fit, minmax(250 px, 1 fr)); gap: 1 rem;>
                 <div style=background: rgba(255,255,255,0.05); padding: 1 rem; border-radius: 8 px;>
                     <strong> Be Specific</strong><br>
                     <small>Instead of "Tell me about AI", try What are the latest AI applications in healthcare?</small>
                 </div>
-                <div style=background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8 px;>
+                <div style=background: rgba(255,255,255,0.05); padding: 1 rem; border-radius: 8 px;>
                     <strong> Use Context</strong><br>
-                    <small>Reference your documents: "Based on my uploaded research papers, what are the conclusions?"</small>
+                    <small>Reference your documents: Based on my uploaded research papers, what are the conclusions?</small>
                 </div>
-                <div style=background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px;>
+                <div style=background: rgba(255,255,255,0.05); padding: 1 rem; border-radius: 8 px;>
                     <strong> Iterate</strong><br>
                     <small>Build on previous answers with follow-up questions for deeper insights</small>
                 </div>
