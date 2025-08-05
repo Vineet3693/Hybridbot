@@ -346,7 +346,7 @@ with col1:
                 st.warning("⚠️ No relevant sources found. Try different search terms or upload relevant PDFs.")
 
 with col2:
-    st.header("ℹ️ How to Use")
+    st.header("How to Use")
     st.markdown("""
     ### 📋 Quick Guide:
     1. **Upload PDFs** in the sidebar
