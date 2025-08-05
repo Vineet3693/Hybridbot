@@ -2135,7 +2135,7 @@ st.markdown('''
         st.markdown('''
         <div class="voice-section" style=margin: 2 rem 0; padding: 1.5 rem; 
              background: linear-gradient(135 deg, #ff6b6b, #feca57); 
-             border-radius: 15 px; position: relative; overflow: hidden;">
+             border-radius: 15 px; position: relative; overflow: hidden;>
             <div style="position: relative; z-index: 2;">
                 <h3 style="color: white; text-align: center; margin-bottom: 1rem;">
                      Voice Input Available
