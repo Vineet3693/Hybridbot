@@ -2170,7 +2170,7 @@ st.markdown('''
          backdrop-filter: blur(10 px); border-radius: 15 px; border: 1 px solid rgba(255,255,255,0.2);>
         <h3 style=color: #667eea; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;>
             <span style="font-size: 1.3 em;"></span>
-            What's on your mind?
+            What is on your mind?
         </h3>
     ''', unsafe_allow_html=True)
     
