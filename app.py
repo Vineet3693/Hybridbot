@@ -2876,9 +2876,9 @@ st.markdown('''
                 if st.button("🔧 Troubleshoot", help="Run system diagnostics"):
                     # This would trigger the troubleshoot function from the main app
                     st.markdown('''
-                    <div style="background: rgba(102, 126, 234, 0.1); padding: 1rem; 
-                         border-radius: 8px; margin: 1rem 0;">
-                        💡 Check the troubleshoot button at the bottom of the page for system diagnostics.
+                    <div style=background: rgba(102, 126, 234, 0.1); padding: 1 rem; 
+                         border-radius: 8 px; margin: 1 rem 0;>
+                         Check the troubleshoot button at the bottom of the page for system diagnostics.
                     </div>
                     ''', unsafe_allow_html=True)
     
