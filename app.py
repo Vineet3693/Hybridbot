@@ -2988,12 +2988,12 @@ st.markdown('''
     # Keyboard Shortcuts Info
     st.markdown('''
     <div style=background: rgba(102, 126, 234, 0.05); padding: 1 rem; border-radius: 10 px; 
-         margin: 1 rem 0; border: 1px solid rgba(102, 126, 234, 0.2);>
+         margin: 1 rem 0; border: 1 px solid rgba(102, 126, 234, 0.2);>
         <details>
             <summary style=color: #667eea; cursor: pointer; font-weight: 500;>
                  Keyboard Shortcuts & Tips
             </summary>
-            <div style=margin-top: 1rem; font-size: 0.9 em;>
+            <div style=margin-top: 1 rem; font-size: 0.9 em;>
                 <strong>Shortcuts:</strong><br>
                 • <code>Ctrl/Cmd + Enter</code> - Submit question<br>
                 • <code>Ctrl/Cmd + /</code> - Focus on question input<br>
