@@ -3252,23 +3252,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     
-st.markdown('''
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Add loading states to buttons
-    const buttons = document.querySelectorAll('[data-testid="stButton"] button');
-    buttons.forEach(button => {
-        button.addEventListener('click', function() {
-            if (!this.disabled) {
-                this.style.opacity = '0.7';
-                this.style.transform = 'scale(0.98)';
-                setTimeout(() => {
-                    this.style.opacity = '1';
-                    this.style.transform = 'scale(1)';
-                }, 200);
-            }
-        });
-    });
-});
-</script>
+
 
