@@ -2150,12 +2150,12 @@ st.markdown('''
                 st.markdown(f'''
                 <div class="voice-detected" style=background: linear-gradient(135 deg, #00f260, #0575e6);
                      color: white; padding: 1 rem; border-radius: 10 px; margin: 1 rem 0;
-                     animation: slideInRight 0.5 s ease-out;">
-                    <div style="display: flex; align-items: center; gap: 0.5 rem;">
-                        <span style="font-size: 1.5 em;"></span>
+                     animation: slideInRight 0.5 s ease-out;>
+                    <div style=display: flex; align-items: center; gap: 0.5 rem;>
+                        <span style="font-size: 1.5 em;></span>
                         <strong>Voice Detected:</strong>
                     </div>
-                    <p style="margin: 0.5 rem 0 0 0; font-size: 1.1 em;">{voice_question}</p>
+                    <p style=margin: 0.5 rem 0 0 0; font-size: 1.1 em;>{voice_question}</p>
                 </div>
                 ''', unsafe_allow_html=True)
         except Exception as e:
