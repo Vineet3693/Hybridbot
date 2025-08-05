@@ -10,6 +10,65 @@ from typing import List, Dict
 import time
 import json
 
+# Lottie animation: AI robot (change URL for other animations)
+lottie_ai = load_lottie_url("https://assets10.lottiefiles.com/packages/lf20_x62chJ.json")
+
+st.markdown("""
+<style>
+.rgb-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1.5rem 0;
+    border-radius: 18px;
+    background: linear-gradient(90deg, #ff00cc, #333399, #00fff0, #ff00cc 100%);
+    background-size: 300% 300%;
+    animation: gradientFlow 6s ease-in-out infinite;
+    box-shadow: 0 6px 24px 0 rgba(102,126,234,0.22);
+    margin-bottom: 2.2rem;
+}
+@keyframes gradientFlow {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+.rgb-title {
+    font-size: 2.6rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg,#ff00cc,#333399,#00fff0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glow 1.5s infinite alternate;
+}
+@keyframes glow {
+    0% { text-shadow: 0 0 16px #00fff0, 0 0 8px #ff00cc;}
+    100% { text-shadow: 0 0 24px #ff00cc, 0 0 12px #00fff0;}
+}
+.rgb-subtitle {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-top: 0.5rem;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 16px #2228;
+}
+</style>
+""", unsafe_allow_html=True)
+
+# Animated RGB header with Lottie
+st.markdown('<div class="rgb-header">', unsafe_allow_html=True)
+col1, col2 = st.columns([1, 6])
+with col1:
+    st_lottie(lottie_ai, height=70, key="ai-robot")
+with col2:
+    st.markdown('<div class="rgb-title">🤖 Hybrid AI Bot with Groq</div>', unsafe_allow_html=True)
+    st.markdown('<div class="rgb-subtitle">Powered by Groq API &mdash; Extract data from PDFs and search the web for intelligent answers</div>', unsafe_allow_html=True)
+st.markdown('</div>', unsafe_allow_html=True)
+
+
+
 
 st.markdown("""
 <style>
