@@ -3130,7 +3130,7 @@ st.markdown('''
         position: relative;
         border-radius: 15 px;
         background: linear-gradient(45 deg, #667eea, #764ba2);
-        padding: 2px;
+        padding: 2 px;
     }
     
     .glow-border::before {
@@ -3142,7 +3142,7 @@ st.markdown('''
         background: linear-gradient(45 deg, #667eea, #764ba2, #f093fb, #f5576c);
         mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
         mask-composite: exclude;
-        animation: rotate 3s linear infinite;
+        animation: rotate 3 s linear infinite;
     }
     
     @keyframes rotate {
