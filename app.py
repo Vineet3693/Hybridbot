@@ -220,7 +220,7 @@ with col1:
     st_lottie(lottie_ai, height=70, key="ai-robot")
 with col2:
     st.markdown('<div class="rgb-title">DocuMind AI</div>', unsafe_allow_html=True)
-    st.markdown('<div class="rgb-subtitle">Made by VINEET; Extract data from PDFs and search the web for intelligent answers</div>', unsafe_allow_html=True)
+    st.markdown('<div class="rgb-subtitle">Made by Vineet; Talk to documents and search the web for intelligent answers</div>', unsafe_allow_html=True)
 st.markdown('</div>', unsafe_allow_html=True)
 
 
