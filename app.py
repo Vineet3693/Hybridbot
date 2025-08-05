@@ -186,54 +186,7 @@ lottie_ai = load_lottie_url("https://assets10.lottiefiles.com/packages/lf20_x62c
 # Lottie animation: AI robot (change URL for other animations)
 lottie_ai = load_lottie_url("https://assets10.lottiefiles.com/packages/lf20_x62chJ.json")
 
-st.markdown("""
-<style>
-    .main-header {
-        border-radius: 16px;
-        background: rgba(102,126,234,0.82);
-        box-shadow: 0 8px 32px 0 rgba(31,38,135,0.13);
-        backdrop-filter: blur(4px);
-        color: white;
-        padding: 2rem 0 1rem 0;
-        margin-bottom: 2rem;
-        font-size: 2.3rem;
-        font-weight: 700;
-        letter-spacing: 1px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        animation: fadeInDown 1s;
-    }
-    .chat-message {
-        background: rgba(255,255,255,0.75);
-        box-shadow: 0 2px 8px 0 rgba(102,126,234,0.09);
-        border-left: 5px solid #764ba2;
-        margin: 1rem 0;
-        padding: 1.2rem;
-        border-radius: 14px;
-        transition: box-shadow 0.3s;
-    }
-    .chat-message:hover {
-        box-shadow: 0 4px 16px 0 rgba(102,126,234,0.16);
-    }
-    .source-box {
-        background: rgba(231,243,255,0.8);
-        border: 1.5px solid #b3d9ff;
-        margin-top: 0.5rem;
-        border-radius: 8px;
-        padding: 0.7rem;
-        font-size: 0.95rem;
-        transition: background 0.2s;
-    }
-    .source-box:hover {
-        background: #e0e7ff;
-    }
-    @keyframes fadeInDown {
-      0% { opacity: 0; transform: translateY(-24px);}
-      100% { opacity: 1; transform: translateY(0);}
-    }
-</style>
-""", unsafe_allow_html=True)
+
 # Page configuration
 st.set_page_config(
     page_title="DocuMind AI",
@@ -241,34 +194,6 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
-
-# Custom CSS
-st.markdown("""
-<style>
-    .main-header {
-        text-align: center;
-        padding: 1rem 0;
-        background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        border-radius: 10px;
-        margin-bottom: 2rem;
-    }
-    .chat-message {
-        padding: 1rem;
-        border-radius: 10px;
-        margin: 1rem 0;
-        border-left: 4px solid #667eea;
-        background-color: #f8f9fa;
-    }
-    .source-box {
-        background-color: #e7f3ff;
-        padding: 0.5rem;
-        border-radius: 5px;
-        margin: 0.5rem 0;
-        border: 1px solid #b3d9ff;
-    }
-</style>
-""", unsafe_allow_html=True)
 
 # Initialize session state
 def initialize_session_state():
