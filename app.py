@@ -3205,12 +3205,12 @@ st.markdown('''
     }
     
     ::-webkit-scrollbar-thumb {
-        background: linear-gradient(135deg, #667eea, #764ba2);
+        background: linear-gradient(135 deg, #667eea, #764ba2);
         border-radius: 10 px;
     }
     
     ::-webkit-scrollbar-thumb:hover {
-        background: linear-gradient(135deg, #764ba2, #667eea);
+        background: linear-gradient(135 deg, #764ba2, #667eea);
     }
     
     /* Print styles */
