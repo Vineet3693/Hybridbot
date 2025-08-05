@@ -20,6 +20,7 @@ reportlab
 fpdf2
 markdown
 
+streamlit-lottie
 # Voice Chat Dependencies
 gtts
 speechrecognition
