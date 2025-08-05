@@ -2713,7 +2713,7 @@ st.markdown('''
                 # Follow-up Questions (if enabled)
                 if include_followup and st.session_state.chat_history:
                     st.markdown('''
-                    <div style=background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+                    <div style=background: linear-gradient(135 deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
                          padding: 1.5 rem; border-radius: 15 px; margin: 2 rem 0; border: 1 px solid rgba(102, 126, 234, 0.3);>
                         <h4 style=color: #667eea; margin: 0 0 1 rem 0; display: flex; align-items: center; gap: 0.5 rem;>
                             <span></span> Suggested Follow-up Questions
