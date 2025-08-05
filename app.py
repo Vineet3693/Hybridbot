@@ -44,14 +44,6 @@ st.markdown("""
     </div>
 </div>
 """, unsafe_allow_html=True)
-    
-    # Enhanced sliders
-    st.markdown("### 🎛️ Parameters")
-    col1, col2 = st.columns(2)
-    with col1:
-        temperature = st.slider("🌡️ Creativity", 0.0, 1.0, 0.7)
-    with col2:
-        max_tokens = st.slider("📏 Response Length", 100, 2000, 1000)
 
 # Custom CSS for dark professional theme
 st.markdown("""
