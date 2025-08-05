@@ -3028,9 +3028,9 @@ st.markdown('''
 <style>
     /* Enhanced button hover effects */
     .stButton > button:hover {
-        transform: translateY(-2px) scale(1.02) !important;
-        box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4) !important;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        transform: translateY(-px) scale(1.02) !important;
+        box-shadow: 0 15 px 35px rgba(102, 126, 234, 0.4) !important;
+        transition: all 0.3 s cubic-bezier(0.4, 0, 0.2, 1) !important;
     }
     
     /* Smooth scrolling */
