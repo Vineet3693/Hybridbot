@@ -2542,7 +2542,7 @@ st.markdown('''
                 else:
                     search_status.markdown('''
                     <div style=background: rgba(240, 147, 251, 0.2); padding: 0.8 rem; 
-                         border-radius: 8px; border-left: 3px solid #f093fb;>
+                         border-radius: 8 px; border-left: 3 px solid #f093fb;>
                         <strong>Limited web results found</strong>
                     </div>
                     ''', unsafe_allow_html=True)
