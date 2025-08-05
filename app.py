@@ -27,16 +27,7 @@ def load_lottie_url(url):
     if r.status_code != 200:
         return None
     return r.json()
-lottie_ai = load_lottie_url("https://assets10.lottiefiles.com/packages/lf20_x62chJ.json")  # or any lottie url you like
 
-st.markdown('<div class="rgb-header">', unsafe_allow_html=True)
-col1, col2 = st.columns([1, 6])
-with col1:
-    st_lottie(lottie_ai, height=70, key="ai-robot")
-with col2:
-    st.markdown('<div class="rgb-title">🤖 Hybrid AI Bot with Groq</div>', unsafe_allow_html=True)
-    st.markdown('<div class="rgb-subtitle">Powered by Groq API &mdash; Extract data from PDFs and search the web for intelligent answers</div>', unsafe_allow_html=True)
-st.markdown('</div>', unsafe_allow_html=True)
 # Add animated blue-green-black background and modern card styles
 st.markdown("""
 <style>
