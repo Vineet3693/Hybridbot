@@ -28,6 +28,29 @@ def load_lottie_url(url):
         return None
     return r.json()
 
+# Professional tabs
+tab1, tab2, tab3, tab4 = st.tabs(["📄 Documents", "💬 Chat", "🔍 Search", "📊 Analytics"])
+
+with tab1:
+    st.markdown("### 📁 Document Management Hub")
+    uploaded_files = st.file_uploader(
+        "Drop your files here or click to browse",
+        accept_multiple_files=True,
+        type=['pdf'],
+        help="Supported formats: PDF (up to 200MB each)"
+    )
+
+with tab2:
+    st.markdown("### 💬 Intelligent Conversation")
+    # Your chat interface here
+
+with tab3:
+    st.markdown("### 🔍 Advanced Search")
+    # Search interface
+
+with tab4:
+    st.markdown("### 📊 Usage Analytics")
+    # Analytics dashboard
 # Professional header with icons
 st.markdown("""
 <div style="text-align: center; padding: 2rem 0;">
