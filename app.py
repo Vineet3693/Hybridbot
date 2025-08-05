@@ -10,6 +10,18 @@ from typing import List, Dict
 import time
 import json
 
+import streamlit as st
+from streamlit_lottie import st_lottie
+import requests
+
+def load_lottie_url(url):
+    r = requests.get(url)
+    if r.status_code != 200:
+        return None
+    return r.json()
+
+# Now your line 14 should work
+lottie_ai = load_lottie_url("https://assets10.lottiefiles.com/packages/lf20_x62chJ.json")
 # Lottie animation: AI robot (change URL for other animations)
 lottie_ai = load_lottie_url("https://assets10.lottiefiles.com/packages/lf20_x62chJ.json")
 
