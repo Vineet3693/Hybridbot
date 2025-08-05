@@ -2230,9 +2230,9 @@ st.markdown('''
     # Advanced Search Configuration Panel
     st.markdown('''
     <div class="config-panel" style=background: linear-gradient(135 deg, #667eea, #764ba2);
-         color: white; padding: 1.5 rem; border-radius: 15 px; margin: 2 rem 0;">
-        <h3 style="margin: 0 0 1 rem 0; display: flex; align-items: center; gap: 0.5 rem;">
-            <span style="font-size: 1.3em;"></span>
+         color: white; padding: 1.5 rem; border-radius: 15 px; margin: 2 rem 0;>
+        <h3 style=margin: 0 0 1 rem 0; display: flex; align-items: center; gap: 0.5 rem;>
+            <span style=font-size: 1.3em;></span>
             Search & Response Settings
         </h3>
     </div>
