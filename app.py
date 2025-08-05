@@ -2446,8 +2446,8 @@ st.markdown('''
         <div class="user-message" style=animation: slideInLeft 0.5 s ease-out;>
             <div style=display: flex; align-items: center; gap: 0.8 rem; margin-bottom: 1 rem;>
                 <div style=background: linear-gradient(45 deg, #667eea, #764ba2); 
-                     padding: 8 px; border-radius: 50 % ; color: white; font-size: 1.2em;></div>
-                <h3 style=margin: 0; color: white;">Your Question</h3>
+                     padding: 8 px; border-radius: 50 % ; color: white; font-size: 1.2 em;></div>
+                <h3 style=margin: 0; color: white;>Your Question</h3>
             </div>
             <div style=font-size: 1.1 em; line-height: 1.6; color: white; 
                  background: rgba(255,255,255,0.1); padding: 1 rem; border-radius: 8 px;>
