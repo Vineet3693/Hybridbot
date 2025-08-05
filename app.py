@@ -2459,7 +2459,7 @@ st.markdown('''
         try:
             # Enhanced Search Process with Real-time Updates
             st.markdown('''
-            <div class="search-process" style=background: linear-gradient(135deg, #667eea, #764ba2);
+            <div class="search-process" style=background: linear-gradient(135 deg, #667eea, #764ba2);
                  color: white; padding: 1.5 rem; border-radius: 15 px; margin: 2 rem 0;
                  animation: slideInRight 0.5 s ease-out;>
                 <h3 style=margin: 0 0 1 rem 0; display: flex; align-items: center; gap: 0.5 rem;>
