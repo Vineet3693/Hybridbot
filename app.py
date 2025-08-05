@@ -2579,7 +2579,7 @@ st.markdown('''
                 st.markdown('''
                 <div class="answer-container" style=animation: slideInLeft 0.5 s ease-out;>
                     <div style=display: flex; align-items: center; gap: 1 rem; margin-bottom: 1.5 rem;>
-                        <div style=background: linear-gradient(45deg, #11998e, #38ef7d); 
+                        <div style=background: linear-gradient(45 deg, #11998e, #38ef7d); 
                              padding: 12 px; border-radius: 50 %; color: white; font-size: 1.5 em;></div>
                         <div>
                             <h2 style=margin: 0; color: white;>AI Assistant</h2>
