@@ -210,7 +210,7 @@ st.markdown("""
     
     /* Custom glow effects */
     .glow-text {
-        text-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
+        text-shadow: 0 0 10px rgba(188, 166, 255, 0.5);
         color: #58a6ff;
     }
     
@@ -237,22 +237,6 @@ st.markdown("""
 lottie_ai = load_lottie_url("https://assets10.lottiefiles.com/packages/lf20_x62chJ.json")
 # Lottie animation: AI robot (change URL for other animations)
 lottie_ai = load_lottie_url("https://assets10.lottiefiles.com/packages/lf20_x62chJ.json")
-
-
-
-
-# Animated RGB header with Lottie
-st.markdown('<div class="rgb-header">', unsafe_allow_html=True)
-col1, col2 = st.columns([1, 6])
-with col1:
-    st_lottie(lottie_ai, height=70, key="ai-robot")
-with col2:
-    st.markdown('<div class="rgb-title">DocuMind AI</div>', unsafe_allow_html=True)
-    st.markdown('<div class="rgb-subtitle">Made by Vineet; Talk to documents and search the web for intelligent answers</div>', unsafe_allow_html=True)
-st.markdown('</div>', unsafe_allow_html=True)
-
-
-
 
 st.markdown("""
 <style>
