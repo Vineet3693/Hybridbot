@@ -33,7 +33,7 @@ def load_lottie_url(url):
 # Professional header with icons
 st.markdown("""
 <div style="text-align: center; padding: 2rem 0;">
-    <h1 class="glow-text">🚀 DocuMind AI Pro</h1>
+    <h1 class="glow-text">🚀Vineet DocuMind AI Pro</h1>
     <p style="font-size: 1.2rem; color: #8b949e;">
         Advanced Document Intelligence & Web Search Platform
     </p>
