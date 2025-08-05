@@ -2208,7 +2208,7 @@ st.markdown('''
             feedback_color = "#00f260"
         
         st.markdown(f'''
-        <div style=background: linear-gradient(135deg, {feedback_color}, {feedback_color}20);
+        <div style=background: linear-gradient(135 deg, {feedback_color}, {feedback_color}20);
              color: white; padding: 0.8 rem; border-radius: 10 px; margin: 1 rem 0;
              animation: slideInUp 0.3 s ease-out; font-weight: 500;>
             {feedback_msg}
