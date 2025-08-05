@@ -2220,7 +2220,7 @@ st.markdown('''
             question_keywords = question.lower().split()[:5]
             st.markdown(f'''
             <div style=background: rgba(102, 126, 234, 0.1); padding: 0.8 rem; 
-                 border-radius: 8px; margin: 0.5 rem 0; border-left: 3 px solid #667eea;">
+                 border-radius: 8 px; margin: 0.5 rem 0; border-left: 3 px solid #667eea;">
                 <small><strong> Detected keywords:</strong> {", ".join([f"#{word}" for word in question_keywords if len(word) > 3])}</small>
             </div>
             ''', unsafe_allow_html=True)
