@@ -2383,10 +2383,10 @@ st.markdown('''
             missing_items.append("🔍 Select search sources")
         
         st.markdown(f'''
-        <div style="background: linear-gradient(135deg, #ff416c, #ff4b2b); 
-             color: white; padding: 1rem; border-radius: 10px; margin: 1rem 0;
-             animation: shake 0.5s ease-in-out;">
-            <strong>⚠️ Ready to ask? Please:</strong><br>
+        <div style=background: linear-gradient(135deg, #ff416c, #ff4b2b); 
+             color: white; padding: 1 rem; border-radius: 10 px; margin: 1 rem 0;
+             animation: shake 0.5 s ease-in-out;>
+            <strong> Ready to ask? Please:</strong><br>
             {"<br>".join([f"• {item}" for item in missing_items])}
         </div>
         ''', unsafe_allow_html=True)
@@ -2396,7 +2396,7 @@ st.markdown('''
     
     with col_main_btn:
         ask_button = st.button(
-            "🚀 Get Smart Answer" if can_ask else "⏳ Complete Setup First",
+            " Get Smart Answer" if can_ask else " Complete Setup First",
             type=button_style,
             use_container_width=True,
             disabled=not can_ask,
@@ -2404,7 +2404,7 @@ st.markdown('''
         )
     
     with col_quick_btn:
-        if st.button("🎲 Random", help="Get a random interesting question"):
+        if st.button(" Random", help="Get a random interesting question"):
             random_questions = [
                 "What are the latest developments in artificial intelligence?",
                 "How can renewable energy solve climate change?",
@@ -2428,14 +2428,14 @@ st.markdown('''
     
     with col_history_btn:
         if st.session_state.chat_history:
-            if st.button("📜 History", help="View conversation history"):
+            if st.button(" History", help="View conversation history"):
                 st.markdown(f'''
-                <div style="background: linear-gradient(135deg, #11998e, #38ef7d); 
-                     color: white; padding: 1rem; border-radius: 10px; margin: 1rem 0;
-                     animation: pulse 2s infinite;">
-                    <strong>📊 Chat Stats:</strong><br>
-                    💬 {len(st.session_state.chat_history)} conversations<br>
-                    📜 Scroll down to view all
+                <div style=background: linear-gradient(135 deg, #11998e, #38ef7d); 
+                     color: white; padding: 1 rem; border-radius: 10 px; margin: 1 rem 0;
+                     animation: pulse 2 s infinite;>
+                    <strong> Chat Stats:</strong><br>
+                     {len(st.session_state.chat_history)} conversations<br>
+                     Scroll down to view all
                 </div>
                 ''', unsafe_allow_html=True)
     
@@ -2443,14 +2443,14 @@ st.markdown('''
     if ask_button and can_ask:
         # Display user question with style
         st.markdown(f'''
-        <div class="user-message" style="animation: slideInLeft 0.5s ease-out;">
-            <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem;">
-                <div style="background: linear-gradient(45deg, #667eea, #764ba2); 
-                     padding: 8px; border-radius: 50%; color: white; font-size: 1.2em;">❓</div>
-                <h3 style="margin: 0; color: white;">Your Question</h3>
+        <div class="user-message" style="animation: slideInLeft 0.5 s ease-out;">
+            <div style=display: flex; align-items: center; gap: 0.8 rem; margin-bottom: 1 rem;>
+                <div style=background: linear-gradient(45 deg, #667eea, #764ba2); 
+                     padding: 8 px; border-radius: 50 % ; color: white; font-size: 1.2em;></div>
+                <h3 style=margin: 0; color: white;">Your Question</h3>
             </div>
-            <div style="font-size: 1.1em; line-height: 1.6; color: white; 
-                 background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px;">
+            <div style="font-size: 1.1 em; line-height: 1.6; color: white; 
+                 background: rgba(255,255,255,0.1); padding: 1 rem; border-radius: 8 px;>
                 {question}
             </div>
         </div>
@@ -2461,9 +2461,9 @@ st.markdown('''
             st.markdown('''
             <div class="search-process" style="background: linear-gradient(135deg, #667eea, #764ba2);
                  color: white; padding: 1.5rem; border-radius: 15px; margin: 2rem 0;
-                 animation: slideInRight 0.5s ease-out;">
-                <h3 style="margin: 0 0 1rem 0; display: flex; align-items: center; gap: 0.5rem;">
-                    <span class="loading-spinner" style="width: 20px; height: 20px; border: 2px solid rgba(255,255,255,0.3); border-top: 2px solid white;"></span>
+                 animation: slideInRight 0.5 s ease-out;">
+                <h3 style=margin: 0 0 1 rem 0; display: flex; align-items: center; gap: 0.5 rem;>
+                    <span class="loading-spinner" style=width: 20 px; height: 20 px; border: 2 px solid rgba(255,255,255,0.3); border-top: 2 px solid white;></span>
                     Searching Information Sources
                 </h3>
             </div>
@@ -2476,20 +2476,20 @@ st.markdown('''
             
             # Determine search parameters based on mode
             search_params = {
-                "🔥 Fast": {"pdf_k": 3, "web_max": 3, "threshold": 0.4},
-                "⚡ Standard": {"pdf_k": 5, "web_max": 5, "threshold": 0.3},
-                "🔍 Deep": {"pdf_k": 8, "web_max": 8, "threshold": 0.2}
+                " Fast": {"pdf_k": 3, "web_max": 3, "threshold": 0.4},
+                " Standard": {"pdf_k": 5, "web_max": 5, "threshold": 0.3},
+                " Deep": {"pdf_k": 8, "web_max": 8, "threshold": 0.2}
             }
             
-            params = search_params.get(search_mode, search_params["⚡ Standard"])
+            params = search_params.get(search_mode, search_params[" Standard"])
             
             # Search PDF Content
             pdf_results = []
             if st.session_state.pdf_processed and "PDF Content" in search_options:
                 search_status.markdown('''
-                <div style="background: rgba(102, 126, 234, 0.2); padding: 0.8rem; 
-                     border-radius: 8px; border-left: 3px solid #667eea; animation: pulse 1s infinite;">
-                    📄 <strong>Searching PDF documents...</strong>
+                <div style=background: rgba(102, 126, 234, 0.2); padding: 0.8 rem; 
+                     border-radius: 8 px; border-left: 3 px solid #667eea; animation: pulse 1s infinite;>
+                     <strong>Searching PDF documents...</strong>
                 </div>
                 ''', unsafe_allow_html=True)
                 search_progress.progress(25)
@@ -2500,16 +2500,16 @@ st.markdown('''
                 # Update status
                 if pdf_results:
                     search_status.markdown(f'''
-                    <div style="background: rgba(0, 242, 96, 0.2); padding: 0.8rem; 
-                         border-radius: 8px; border-left: 3px solid #00f260;">
-                        ✅ <strong>Found {len(pdf_results)} relevant PDF sections</strong>
+                    <div style=background: rgba(0, 242, 96, 0.2); padding: 0.8 rem; 
+                         border-radius: 8 px; border-left: 3 px solid #00f260;">
+                         <strong>Found {len(pdf_results)} relevant PDF sections</strong>
                     </div>
                     ''', unsafe_allow_html=True)
                 else:
                     search_status.markdown('''
-                    <div style="background: rgba(240, 147, 251, 0.2); padding: 0.8rem; 
-                         border-radius: 8px; border-left: 3px solid #f093fb;">
-                        ⚠️ <strong>No highly relevant PDF content found</strong>
+                    <div style=background: rgba(240, 147, 251, 0.2); padding: 0.8 rem; 
+                         border-radius: 8 px; border-left: 3 px solid #f093fb;>
+                         <strong>No highly relevant PDF content found</strong>
                     </div>
                     ''', unsafe_allow_html=True)
                 
@@ -2520,9 +2520,9 @@ st.markdown('''
             web_results = []
             if "Web Sources" in search_options:
                 search_status.markdown('''
-                <div style="background: rgba(17, 153, 142, 0.2); padding: 0.8rem; 
-                     border-radius: 8px; border-left: 3px solid #11998e; animation: pulse 1s infinite;">
-                    🌐 <strong>Searching web sources...</strong>
+                <div style=background: rgba(17, 153, 142, 0.2); padding: 0.8 rem; 
+                     border-radius: 8 px; border-left: 3 px solid #11998e; animation: pulse 1s infinite;>
+                     <strong>Searching web sources...</strong>
                 </div>
                 ''', unsafe_allow_html=True)
                 search_progress.progress(75)
@@ -2534,16 +2534,16 @@ st.markdown('''
                 # Update status
                 if web_results:
                     search_status.markdown(f'''
-                    <div style="background: rgba(0, 242, 96, 0.2); padding: 0.8rem; 
-                         border-radius: 8px; border-left: 3px solid #00f260;">
-                        ✅ <strong>Found {len(web_results)} web sources</strong>
+                    <div style=background: rgba(0, 242, 96, 0.2); padding: 0.8 rem; 
+                         border-radius: 8 px; border-left: 3 px solid #00f260;>
+                        <strong>Found {len(web_results)} web sources</strong>
                     </div>
                     ''', unsafe_allow_html=True)
                 else:
                     search_status.markdown('''
-                    <div style="background: rgba(240, 147, 251, 0.2); padding: 0.8rem; 
-                         border-radius: 8px; border-left: 3px solid #f093fb;">
-                        ⚠️ <strong>Limited web results found</strong>
+                    <div style=background: rgba(240, 147, 251, 0.2); padding: 0.8 rem; 
+                         border-radius: 8px; border-left: 3px solid #f093fb;>
+                        <strong>Limited web results found</strong>
                     </div>
                     ''', unsafe_allow_html=True)
                 
@@ -2561,13 +2561,13 @@ st.markdown('''
             if total_sources > 0:
                 # Success summary
                 st.markdown(f'''
-                <div style="background: linear-gradient(135deg, #00f260, #0575e6); 
-                     color: white; padding: 1.5rem; border-radius: 15px; margin: 1rem 0;
-                     text-align: center; animation: slideInUp 0.5s ease-out;">
-                    <div style="font-size: 1.3em; margin-bottom: 0.5rem;">
-                        🎯 <strong>Search Complete!</strong>
+                <div style=background: linear-gradient(135 deg, #00f260, #0575e6); 
+                     color: white; padding: 1.5 rem; border-radius: 15 px; margin: 1 rem 0;
+                     text-align: center; animation: slideInUp 0.5 s ease-out;">
+                    <div style=font-size: 1.3 em; margin-bottom: 0.5 rem;>
+                         <strong>Search Complete!</strong>
                     </div>
-                    <div style="font-size: 1.1em;">
+                    <div style=font-size: 1.1em;>
                         Found <strong>{total_sources} relevant sources</strong>
                         {f" • {len(pdf_results)} from PDFs" if pdf_results else ""}
                         {f" • {len(web_results)} from web" if web_results else ""}
@@ -2577,14 +2577,14 @@ st.markdown('''
                 
                 # AI Response Generation
                 st.markdown('''
-                <div class="answer-container" style="animation: slideInLeft 0.5s ease-out;">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
-                        <div style="background: linear-gradient(45deg, #11998e, #38ef7d); 
-                             padding: 12px; border-radius: 50%; color: white; font-size: 1.5em;">🤖</div>
+                <div class="answer-container" style=animation: slideInLeft 0.5 s ease-out;>
+                    <div style=display: flex; align-items: center; gap: 1 rem; margin-bottom: 1.5rem;>
+                        <div style=background: linear-gradient(45deg, #11998e, #38ef7d); 
+                             padding: 12 px; border-radius: 50 %; color: white; font-size: 1.5 em;></div>
                         <div>
-                            <h2 style="margin: 0; color: white;">AI Assistant</h2>
-                            <p style="margin: 0; color: rgba(255,255,255,0.8); font-size: 0.9em;">
-                                Powered by Groq • Processing {total_sources} sources
+                            <h2 style=margin: 0; color: white;>AI Assistant</h2>
+                            <p style=margin: 0; color: rgba(255,255,255,0.8); font-size: 0.9em;>
+                                Powered by Groq Processing {total_sources} sources
                             </p>
                         </div>
                     </div>
@@ -2593,9 +2593,9 @@ st.markdown('''
                 # Show AI thinking process if enabled
                 if show_thinking:
                     st.markdown('''
-                    <div style="background: rgba(255,255,255,0.1); padding: 1rem; 
-                         border-radius: 8px; margin: 1rem 0; border-left: 3px solid #667eea;">
-                        <strong>🧠 AI Reasoning Process:</strong><br>
+                    <div style=background: rgba(255,255,255,0.1); padding: 1 rem; 
+                         border-radius: 8 px; margin: 1 rem 0; border-left: 3 px solid #667eea;>
+                        <strong> AI Reasoning Process:</strong><br>
                         1. Analyzing your question for key concepts<br>
                         2. Matching information from {pdf_count} PDF sources and {web_count} web sources<br>
                         3. Synthesizing comprehensive answer<br>
@@ -2617,10 +2617,10 @@ st.markdown('''
                             
                             # Typing indicator
                             response_placeholder.markdown('''
-                            <div style="color: rgba(255,255,255,0.7); padding: 1rem;">
-                                <span class="loading-spinner" style="width: 16px; height: 16px; 
+                            <div style=color: rgba(255,255,255,0.7); padding: 1 rem;>
+                                <span class="loading-spinner" style=width: 16 px; height: 16 px; 
                                       border: 2px solid rgba(255,255,255,0.3); 
-                                      border-top: 2px solid white; margin-right: 0.5rem;"></span>
+                                      border-top: 2 px solid white; margin-right: 0.5 rem;></span>
                                 AI is thinking and typing...
                             </div>
                             ''', unsafe_allow_html=True)
@@ -2632,8 +2632,8 @@ st.markdown('''
                                 if chunk.choices[0].delta.content is not None:
                                     full_response += chunk.choices[0].delta.content
                                     response_placeholder.markdown(f'''
-                                    <div style="color: white; line-height: 1.8; font-size: 1.05em; padding: 1rem;">
-                                        {full_response}<span style="animation: blink 1s infinite; color: #667eea;">▌</span>
+                                    <div style=color: white; line-height: 1.8; font-size: 1.05 em; padding: 1 rem;>
+                                        {full_response}<span style=animation: blink 1s infinite; color: #667eea;></span>
                                     </div>
                                     <style>
                                         @keyframes blink {{
@@ -2645,9 +2645,9 @@ st.markdown('''
                             
                             # Final response without cursor
                             response_placeholder.markdown(f'''
-                            <div style="color: white; line-height: 1.8; font-size: 1.05em; 
-                                 padding: 1rem; background: rgba(255,255,255,0.05); 
-                                 border-radius: 8px; animation: fadeIn 0.5s ease-out;">
+                            <div style=color: white; line-height: 1.8; font-size: 1.05 em; 
+                                 padding: 1 rem; background: rgba(255,255,255,0.05); 
+                                 border-radius: 8 px; animation: fadeIn 0.5 s ease-out;>
                                 {full_response}
                             </div>
                             ''', unsafe_allow_html=True)
@@ -2668,16 +2668,16 @@ st.markdown('''
                 
                 else:
                     # Complete Response Mode
-                    with st.spinner("🧠 Generating comprehensive answer..."):
+                    with st.spinner(" Generating comprehensive answer..."):
                         try:
                             answer = st.session_state.groq_handler.generate_answer(
                                 question, pdf_results, web_results
                             )
                             
                             st.markdown(f'''
-                            <div style="color: white; line-height: 1.8; font-size: 1.05em; 
-                                 padding: 1.5rem; background: rgba(255,255,255,0.05); 
-                                 border-radius: 8px; animation: fadeInUp 0.5s ease-out;">
+                            <div style=color: white; line-height: 1.8; font-size: 1.05 em; 
+                                 padding: 1.5 rem; background: rgba(255,255,255,0.05); 
+                                 border-radius: 8 px; animation: fadeInUp 0.5 s ease-out;>
                                 {answer}
                             </div>
                             ''', unsafe_allow_html=True)
@@ -2713,10 +2713,10 @@ st.markdown('''
                 # Follow-up Questions (if enabled)
                 if include_followup and st.session_state.chat_history:
                     st.markdown('''
-                    <div style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
-                         padding: 1.5rem; border-radius: 15px; margin: 2rem 0; border: 1px solid rgba(102, 126, 234, 0.3);">
-                        <h4 style="color: #667eea; margin: 0 0 1rem 0; display: flex; align-items: center; gap: 0.5rem;">
-                            <span>💡</span> Suggested Follow-up Questions
+                    <div style=background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+                         padding: 1.5 rem; border-radius: 15 px; margin: 2 rem 0; border: 1 px solid rgba(102, 126, 234, 0.3);>
+                        <h4 style=color: #667eea; margin: 0 0 1 rem 0; display: flex; align-items: center; gap: 0.5 rem;>
+                            <span></span> Suggested Follow-up Questions
                         </h4>
                     ''', unsafe_allow_html=True)
                     
@@ -2730,7 +2730,7 @@ st.markdown('''
                     ]
                     
                     for i, fq in enumerate(followup_questions[:3], 1):
-                        if st.button(f"🔍 {fq}", key=f"followup_{i}", help="Click to ask this follow-up question"):
+                        if st.button(f" {fq}", key=f"followup_{i}", help="Click to ask this follow-up question"):
                             st.session_state.question_input = fq
                             st.rerun()
                     
@@ -2738,26 +2738,26 @@ st.markdown('''
                 
                 # Quick Actions Panel
                 st.markdown('''
-                <div style="background: linear-gradient(135deg, rgba(17, 153, 142, 0.2), rgba(56, 239, 125, 0.2));
-                     padding: 1rem; border-radius: 15px; margin: 1rem 0; border: 1px solid rgba(17, 153, 142, 0.3);">
-                    <h5 style="color: #11998e; margin: 0 0 0.5rem 0;">⚡ Quick Actions</h5>
+                <div style=background: linear-gradient(135 deg, rgba(17, 153, 142, 0.2), rgba(56, 239, 125, 0.2));
+                     padding: 1 rem; border-radius: 15 px; margin: 1 rem 0; border: 1px solid rgba(17, 153, 142, 0.3);>
+                    <h5 style=color: #11998e; margin: 0 0 0.5 rem 0;> Quick Actions</h5>
                 ''', unsafe_allow_html=True)
                 
                 col_action1, col_action2, col_action3, col_action4 = st.columns(4)
                 
                 with col_action1:
-                    if st.button("🔄 Ask Another", help="Clear and ask a new question"):
+                    if st.button(" Ask Another", help="Clear and ask a new question"):
                         st.session_state.question_input = ""
                         st.rerun()
                 
                 with col_action2:
-                    if st.button("📤 Export This", help="Export this conversation"):
+                    if st.button(" Export This", help="Export this conversation"):
                         if EXPORT_AVAILABLE and st.session_state.chat_history:
                             try:
                                 latest_chat = [st.session_state.chat_history[-1]]
                                 docx_data = st.session_state.chat_exporter.export_to_docx(latest_chat)
                                 st.download_button(
-                                    label="📥 Download",
+                                    label="Download",
                                     data=docx_data,
                                     file_name=f"conversation_{int(time.time())}.docx",
                                     mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
@@ -2767,11 +2767,11 @@ st.markdown('''
                                 display_animated_message(f"Export error: {str(e)}", "error")
                 
                 with col_action3:
-                    if st.button("🎯 Refine Search", help="Refine this question"):
+                    if st.button(" Refine Search", help="Refine this question"):
                         st.markdown('''
-                        <div style="background: rgba(102, 126, 234, 0.1); padding: 1rem; 
-                             border-radius: 8px; margin: 1rem 0;">
-                            💡 <strong>Tips to refine your search:</strong><br>
+                        <div style=background: rgba(102, 126, 234, 0.1); padding: 1 rem; 
+                             border-radius: 8 px; margin: 1 rem 0;>
+                             <strong>Tips to refine your search:</strong><br>
                             • Be more specific about what you want to know<br>
                             • Add context or background information<br>
                             • Specify the type of answer you need<br>
@@ -2780,14 +2780,14 @@ st.markdown('''
                         ''', unsafe_allow_html=True)
                 
                 with col_action4:
-                    if st.button("📊 View Sources", help="Explore all sources used"):
-                        with st.expander("🔍 Detailed Source Analysis", expanded=True):
+                    if st.button(" View Sources", help="Explore all sources used"):
+                        with st.expander(" Detailed Source Analysis", expanded=True):
                             if pdf_results:
-                                st.markdown("**📄 PDF Sources Analysis:**")
+                                st.markdown("** PDF Sources Analysis:**")
                                 for i, result in enumerate(pdf_results, 1):
                                     st.markdown(f'''
-                                    <div style="background: rgba(102, 126, 234, 0.1); padding: 0.8rem; 
-                                         border-radius: 8px; margin: 0.5rem 0; border-left: 3px solid #667eea;">
+                                    <div style=background: rgba(102, 126, 234, 0.1); padding: 0.8 rem; 
+                                         border-radius: 8 px; margin: 0.5 rem 0; border-left: 3px solid #667eea;>
                                         <strong>PDF Source {i}:</strong><br>
                                         <em>Relevance: High • Length: {len(result)} chars</em><br>
                                         {result[:300]}{"..." if len(result) > 300 else ""}
@@ -2795,11 +2795,11 @@ st.markdown('''
                                     ''', unsafe_allow_html=True)
                             
                             if web_results:
-                                st.markdown("**🌐 Web Sources Analysis:**")
+                                st.markdown("** Web Sources Analysis:**")
                                 for i, result in enumerate(web_results, 1):
                                     st.markdown(f'''
-                                    <div style="background: rgba(17, 153, 142, 0.1); padding: 0.8rem; 
-                                         border-radius: 8px; margin: 0.5rem 0; border-left: 3px solid #11998e;">
+                                    <div style=background: rgba(17, 153, 142, 0.1); padding: 0.8 rem; 
+                                         border-radius: 8 px; margin: 0.5 rem 0; border-left: 3 px solid #11998e;>
                                         <strong>Web Source {i}: {result.get("title", "Unknown")}</strong><br>
                                         <em>URL: {result.get("url", "N/A")}</em><br>
                                         {result.get("snippet", "No snippet available")[:300]}{"..." if len(result.get("snippet", "")) > 300 else ""}
@@ -2811,17 +2811,17 @@ st.markdown('''
             else:
                 # No Sources Found
                 st.markdown('''
-                <div style="background: linear-gradient(135deg, #ff416c, #ff4b2b); 
-                     color: white; padding: 2rem; border-radius: 15px; margin: 2rem 0;
-                     text-align: center; animation: shake 0.5s ease-in-out;">
-                    <div style="font-size: 2em; margin-bottom: 1rem;">🔍</div>
-                    <h3 style="margin: 0 0 1rem 0;">No Relevant Sources Found</h3>
-                    <p style="margin: 0 0 1.5rem 0; opacity: 0.9;">
-                        We couldn't find information matching your question in the selected sources.
+                <div style=background: linear-gradient(135deg, #ff416c, #ff4b2b); 
+                     color: white; padding: 2 rem; border-radius: 15 px; margin: 2 rem 0;
+                     text-align: center; animation: shake 0.5 s ease-in-out;>
+                    <div style=font-size: 2 em; margin-bottom: 1 rem;></div>
+                    <h3 style=margin: 0 0 1 rem 0;>No Relevant Sources Found</h3>
+                    <p style=margin: 0 0 1.5 rem 0; opacity: 0.9;>
+                        We could not find information matching your question in the selected sources.
                     </p>
-                    <div style="background: rgba(255,255,255,0.1); padding: 1rem; 
-                         border-radius: 8px; text-align: left;">
-                        <strong>💡 Try these suggestions:</strong><br>
+                    <div style=background: rgba(255,255,255,0.1); padding: 1 rem; 
+                         border-radius: 8 px; text-align: left;>
+                        <strong> Try these suggestions:</strong><br>
                         • Rephrase your question with different keywords<br>
                         • Upload more relevant PDF documents<br>
                         • Check if web search is enabled<br>
@@ -2835,17 +2835,17 @@ st.markdown('''
                 col_suggest1, col_suggest2 = st.columns(2)
                 
                 with col_suggest1:
-                    if st.button("🔄 Try Web Search Only", help="Search web sources only"):
+                    if st.button(" Try Web Search Only", help="Search web sources only"):
                         # Force web search
                         st.session_state.search_options = ["Web Sources"]
                         st.rerun()
                 
                 with col_suggest2:
-                    if st.button("📚 Upload More PDFs", help="Add more documents"):
+                    if st.button(" Upload More PDFs", help="Add more documents"):
                         st.markdown('''
-                        <div style="background: rgba(102, 126, 234, 0.2); padding: 1rem; 
-                             border-radius: 8px; margin: 1rem 0;">
-                            👆 Use the sidebar to upload more PDF documents that might contain relevant information.
+                        <div style=background: rgba(102, 126, 234, 0.2); padding: 1 rem; 
+                             border-radius: 8 px; margin: 1 rem 0;">
+                            Use the sidebar to upload more PDF documents that might contain relevant information.
                         </div>
                         ''', unsafe_allow_html=True)
         
@@ -2854,9 +2854,9 @@ st.markdown('''
             
             # Error recovery options
             st.markdown('''
-            <div style="background: rgba(255, 65, 108, 0.2); padding: 1.5rem; 
-                 border-radius: 15px; margin: 1rem 0; border: 1px solid rgba(255, 65, 108, 0.3);">
-                <h4 style="color: #ff416c; margin: 0 0 1rem 0;">🔧 Error Recovery</h4>
+            <div style=background: rgba(255, 65, 108, 0.2); padding: 1.5 rem; 
+                 border-radius: 15 px; margin: 1 rem 0; border: 1 px solid rgba(255, 65, 108, 0.3);>
+                <h4 style=color: #ff416c; margin: 0 0 1rem 0;>Error Recovery</h4>
                 <p>Something went wrong. Here are some things you can try:</p>
             </div>
             ''', unsafe_allow_html=True)
@@ -2864,7 +2864,7 @@ st.markdown('''
             col_recovery1, col_recovery2, col_recovery3 = st.columns(3)
             
             with col_recovery1:
-                if st.button("🔄 Retry Search", help="Try the search again"):
+                if st.button("Retry Search", help="Try the search again"):
                     st.rerun()
             
             with col_recovery2:
@@ -2886,10 +2886,10 @@ st.markdown('''
     if st.session_state.chat_history:
         st.markdown("---")
         st.markdown('''
-        <div style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
-             padding: 1.5rem; border-radius: 15px; margin: 2rem 0;">
-            <h4 style="color: #667eea; margin: 0 0 1rem 0; display: flex; align-items: center; gap: 0.5rem;">
-                <span>⏱️</span> Recent Questions
+        <div style=background: linear-gradient(135 deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+             padding: 1.5 rem; border-radius: 15 px; margin: 2 rem 0;>
+            <h4 style=color: #667eea; margin: 0 0 1 rem 0; display: flex; align-items: center; gap: 0.5 rem;>
+                <span></span> Recent Questions
             </h4>
         ''', unsafe_allow_html=True)
         
@@ -2899,10 +2899,10 @@ st.markdown('''
             question_preview = chat["question"][:60] + "..." if len(chat["question"]) > 60 else chat["question"]
             timestamp = time.strftime('%H:%M', time.localtime(chat["timestamp"]))
             
-            if st.button(f"🕒 {timestamp} - {question_preview}", key=f"recent_{i}", help="Click to view this conversation"):
+            if st.button(f" {timestamp} - {question_preview}", key=f"recent_{i}", help="Click to view this conversation"):
                 st.markdown(f'''
-                <div style="background: rgba(17, 153, 142, 0.1); padding: 1rem; 
-                     border-radius: 8px; margin: 1rem 0; animation: slideInUp 0.3s ease-out;">
+                <div style=background: rgba(17, 153, 142, 0.1); padding: 1 rem; 
+                     border-radius: 8 px; margin: 1 rem 0; animation: slideInUp 0.3 s ease-out;>
                     <strong>Previous Question:</strong> {chat["question"]}<br><br>
                     <strong>Answer:</strong> {chat["answer"][:200]}{"..." if len(chat["answer"]) > 200 else ""}
                 </div>
@@ -2914,10 +2914,10 @@ st.markdown('''
     if not st.session_state.chat_history:
         st.markdown("---")
         st.markdown('''
-        <div style="background: linear-gradient(135deg, rgba(0, 242, 96, 0.1), rgba(5, 117, 230, 0.1));
-             padding: 2rem; border-radius: 15px; margin: 2rem 0; text-align: center;">
-            <h3 style="color: #00f260; margin: 0 0 1.5rem 0;">🌟 Get Started with These Examples</h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
+        <div style=background: linear-gradient(135 deg, rgba(0, 242, 96, 0.1), rgba(5, 117, 230, 0.1));
+             padding: 2 rem; border-radius: 15 px; margin: 2 rem 0; text-align: center;>
+            <h3 style=color: #00f260; margin: 0 0 1.5 rem 0;> Get Started with These Examples</h3>
+            <div style=display: grid; grid-template-columns: repeat(autofit, minmax(300 px, 1 fr)); gap: 1 rem;>
         ''', unsafe_allow_html=True)
         
         example_questions = [
@@ -2959,26 +2959,26 @@ st.markdown('''
     if len(st.session_state.chat_history) > 0:
         st.markdown("---")
         st.markdown('''
-        <div style="background: linear-gradient(135deg, rgba(240, 147, 251, 0.1), rgba(245, 87, 108, 0.1));
-             padding: 1.5rem; border-radius: 15px; margin: 2rem 0;">
-            <h4 style="color: #f093fb; margin: 0 0 1rem 0; display: flex; align-items: center; gap: 0.5rem;">
-                <span>💡</span> Pro Tips for Better Results
+        <div style=background: linear-gradient(135 deg, rgba(240, 147, 251, 0.1), rgba(245, 87, 108, 0.1));
+             padding: 1.5 rem; border-radius: 15 px; margin: 2rem 0;>
+            <h4 style=color: #f093fb; margin: 0 0 1 rem 0; display: flex; align-items: center; gap: 0.5 rem;>
+                <span></span> Pro Tips for Better Results
             </h4>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
-                <div style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px;">
-                    <strong>🎯 Be Specific</strong><br>
-                    <small>Instead of "Tell me about AI", try "What are the latest AI applications in healthcare?"</small>
+            <div style=display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;>
+                <div style=background: rgba(255,255,255,0.05); padding: 1 rem; border-radius: 8 px;>
+                    <strong> Be Specific</strong><br>
+                    <small>Instead of "Tell me about AI", try What are the latest AI applications in healthcare?</small>
                 </div>
-                <div style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px;">
-                    <strong>📖 Use Context</strong><br>
+                <div style=background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8 px;>
+                    <strong> Use Context</strong><br>
                     <small>Reference your documents: "Based on my uploaded research papers, what are the conclusions?"</small>
                 </div>
-                <div style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px;">
-                    <strong>🔄 Iterate</strong><br>
+                <div style=background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px;>
+                    <strong> Iterate</strong><br>
                     <small>Build on previous answers with follow-up questions for deeper insights</small>
                 </div>
-                <div style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px;">
-                    <strong>⚖️ Compare Sources</strong><br>
+                <div style=background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px;>
+                    <strong> Compare Sources</strong><br>
                     <small>Enable both PDF and web search to get comprehensive, well-rounded answers</small>
                 </div>
             </div>
@@ -2987,13 +2987,13 @@ st.markdown('''
     
     # Keyboard Shortcuts Info
     st.markdown('''
-    <div style="background: rgba(102, 126, 234, 0.05); padding: 1rem; border-radius: 10px; 
-         margin: 1rem 0; border: 1px solid rgba(102, 126, 234, 0.2);">
+    <div style=background: rgba(102, 126, 234, 0.05); padding: 1 rem; border-radius: 10 px; 
+         margin: 1 rem 0; border: 1px solid rgba(102, 126, 234, 0.2);>
         <details>
-            <summary style="color: #667eea; cursor: pointer; font-weight: 500;">
-                ⌨️ Keyboard Shortcuts & Tips
+            <summary style=color: #667eea; cursor: pointer; font-weight: 500;>
+                 Keyboard Shortcuts & Tips
             </summary>
-            <div style="margin-top: 1rem; font-size: 0.9em;">
+            <div style=margin-top: 1rem; font-size: 0.9em;>
                 <strong>Shortcuts:</strong><br>
                 • <code>Ctrl/Cmd + Enter</code> - Submit question<br>
                 • <code>Ctrl/Cmd + /</code> - Focus on question input<br>
@@ -3014,9 +3014,9 @@ st.markdown('''
         avg_response_time = 2.3  # This would be calculated from actual response times
         
         st.markdown(f'''
-        <div style="background: linear-gradient(135deg, rgba(17, 153, 142, 0.1), rgba(56, 239, 125, 0.1));
-             padding: 1rem; border-radius: 10px; margin: 1rem 0; text-align: center;">
-            <strong>📊 Session Stats:</strong>
+        <div style=background: linear-gradient(135 deg, rgba(17, 153, 142, 0.1), rgba(56, 239, 125, 0.1));
+             padding: 1 rem; border-radius: 10 px; margin: 1 rem 0; text-align: center;>
+            <strong> Session Stats:</strong>
             {len(st.session_state.chat_history)} questions • 
             {total_chars:,} response characters • 
             ~{avg_response_time:.1f}s avg response time
