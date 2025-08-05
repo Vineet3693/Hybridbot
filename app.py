@@ -1417,28 +1417,29 @@ col1, col2 = st.columns([3, 1])
 
 with col1:
     # Enhanced Question Input Section
-    st.markdown('''
-    <div class="question-container">
-        <div style="text-align: center; margin-bottom: 1rem;">
-           <h2 class="glow-text">Ask Your Questions</h2>
-            <p style="color: white; opacity: 0.9;">Get intelligent answers from your documents and the web</p>
-        </div>
-    </div>
-    ''', unsafe_allow_html=True)
     
-    # Voice input section (if available) with enhanced styling
-    voice_question = ""
-    if VOICE_AVAILABLE and hasattr(st.session_state, 'voice_integration'):
-        st.markdown('<div class="voice-section" style="margin: 1rem 0;">', unsafe_allow_html=True)
-        try:
-            voice_question = st.session_state.voice_integration.handle_voice_input()
-            if voice_question:
-                st.markdown(f'''
-                <div class="voice-detected"><strong>Voice Input Detected:</strong> {voice_question}
-                </div>
-                ''', unsafe_allow_html=True)
-        except Exception as e:
-            display_animated_message(f"Voice input error: {str(e)}", "warning")
+st.markdown('''
+<div class="question-container">
+    <div style="text-align: center; margin-bottom: 1rem;">
+       <h2 class="glow-text">Ask Your Questions</h2>
+        <p style="color: white; opacity: 0.9;">Get intelligent answers from your documents and the web</p>
+    </div>
+</div>
+''', unsafe_allow_html=True)
+
+# Voice input section (if available) with enhanced styling
+voice_question = ""
+if VOICE_AVAILABLE and hasattr(st.session_state, 'voice_integration'):
+    st.markdown('<div class="voice-section" style="margin: 1rem 0;">', unsafe_allow_html=True)
+    try:
+        voice_question = st.session_state.voice_integration.handle_voice_input()
+        if voice_question:
+            st.markdown(f'''
+            <div class="voice-detected"><strong>Voice Input Detected:</strong> {voice_question}
+            </div>
+            ''', unsafe_allow_html=True)
+    except Exception as e:
+        display_animated_message(f"Voice input error: {str(e)}", "warning")
         st.markdown('</div>', unsafe_allow_html=True)
     
     # Enhanced Question Input Box
