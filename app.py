@@ -2133,7 +2133,7 @@ st.markdown('''
     # Voice Input Section with Enhanced UI
     if VOICE_AVAILABLE and hasattr(st.session_state, 'voice_integration'):
         st.markdown('''
-        <div class="voice-section" style="margin: 2 rem 0; padding: 1.5 rem; 
+        <div class="voice-section" style=margin: 2 rem 0; padding: 1.5 rem; 
              background: linear-gradient(135deg, #ff6b6b, #feca57); 
              border-radius: 15px; position: relative; overflow: hidden;">
             <div style="position: relative; z-index: 2;">
@@ -2152,7 +2152,7 @@ st.markdown('''
                      color: white; padding: 1 rem; border-radius: 10px; margin: 1rem 0;
                      animation: slideInRight 0.5s ease-out;">
                     <div style="display: flex; align-items: center; gap: 0.5rem;">
-                        <span style="font-size: 1.5 em;">🎤</span>
+                        <span style="font-size: 1.5 em;"></span>
                         <strong>Voice Detected:</strong>
                     </div>
                     <p style="margin: 0.5 rem 0 0 0; font-size: 1.1em;">{voice_question}</p>
